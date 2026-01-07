@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="Resources/logo.png" />
+  <title>Overfight — Треньори</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" href="index.html#top">
+      <img src="Resources/logo.png" alt="Overfight logo" class="brand-logo" />
+      <span class="brand-name">Overfight</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Отвори меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" aria-label="Главна навигация">
+      <ul class="nav-list">
+       <li><a href="index.html">НАЧАЛО</a></li>
+
+<li class="has-dropdown">
+  <a href="#" class="dropdown-trigger is-active">ЗА КЛУБА</a>
+  <ul class="dropdown">
+    <li><a href="trainers.html">ТРЕНЬОРИ</a></li>
+    <li><a href="about.html">ОПИСАНИЕ</a></li>
+    <li><a href="schedule.html">ГРАФИК</a></li>
+  </ul>
+</li>
+
+
+
+
+        <li><a href="gallery.html">ГАЛЕРИЯ</a></li>
+        <li><a href="contacts.html">КОНТАКТИ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container" style="padding: 22px 0 40px;">
+  <section class="intro reveal">
+    <h2>Треньори</h2>
+    <p>Представяне на екипа с опит, степени, постижения и стил на обучение.</p>
+  </section>
+
+ <div class="news-grid" style="margin-top:12px;">
+
+  <!-- ТРЕНЬОР 1 -->
+  <a href="trainerDEIVID.html" target="_blank" class="news">
+    <article class="news-card">
+      <div class="news-thumb">
+        <img src="Resources/deivid.png" alt="Сенпай Дейвид Антонов">
+      </div>
+      <div class="news-body">
+        <h3>Сенпай Дейвид Антонов</h3>
+        <p>II дан • Опит 10+ години • Тренировки за деца и младежи.</p>
+        <span class="link">Виж профил</span>
+      </div>
+    </article>
+  </a>
+
+  <!-- ТРЕНЬОР 2 -->
+  <a href="trainerIVO.html" target="_blank" class="news">
+    <article class="news-card">
+      <div class="news-thumb">
+        <img src="Resources/ivo.png" alt="Сенсей Иво Мукански">
+      </div>
+      <div class="news-body">
+        <h3>Сенсей Иво Мукански</h3>
+        <p>III дан • Президент на карате клуб Overfight</p>
+        <span class="link">Виж профил</span>
+      </div>
+    </article>
+  </a>
+
+  <!-- ТРЕНЬОР 3 -->
+  <a href="trainerDAMYAN.html" target="_blank" class="news">
+    <article class="news-card">
+      <div class="news-thumb">
+        <img src="Resources/damyan.png" alt="Сенпай Дамян Ников">
+      </div>
+      <div class="news-body">
+        <h3>Сенпай Дамян Ников</h3>
+        <p>II дан • Опит 10+ години • Тренировки за деца и младежи.</p>
+        <span class="link">Виж профил</span>
+      </div>
+    </article>
+  </a>
+
+</div>
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div>
+      <div class="footer-brand">Карате клуб <strong>Overfight</strong></div>
+      <div class="muted">© <span id="y"></span> Всички права запазени.</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="about.html">Политика</a>
+      <a href="contacts.html">Контакти</a>
+      <a href="schedule.html">График</a>
+    </div>
+
+    <div class="social">
+      <!-- Instagram -->
+      <a class="social-btn" href="https://www.instagram.com/karate.club.overfight/" target="_blank" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-2.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/>
+        </svg>
+      </a>
+
+      <!-- TikTok -->
+      <a class="social-btn" href="https://www.tiktok.com/@karate_overfight" target="_blank" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 3v10.2a3.8 3.8 0 1 1-3-3.7V7.2a7 7 0 1 0 5 6.7V8.4c1.1 1 2.6 1.6 4 1.6V7.6c-1.6 0-3.1-.9-4-2.2A5.5 5.5 0 0 1 14 3z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navBtn = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav");
+  navBtn?.addEventListener("click", () => {
+    const open = nav.classList.toggle("is-open");
+    navBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  // Dropdown toggle (ЕДИНСТВЕН)
+  const dropdownTrigger = document.querySelector(".dropdown-trigger");
+  const dropdownParent = dropdownTrigger?.closest(".has-dropdown");
+
+  dropdownTrigger?.addEventListener("click", (e) => {
+    e.preventDefault();
+    dropdownParent.classList.toggle("open");
+  });
+
+  // Footer year
+  document.getElementById("y").textContent = new Date().getFullYear();
+
+  // Reveal effect
+  const els = document.querySelectorAll(".reveal");
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) e.target.classList.add("is-visible");
+      else e.target.classList.remove("is-visible");
+    });
+  }, { threshold: 0.12 });
+
+  els.forEach(el => io.observe(el));
+</script>
+
+
+</body>
+</html>
