@@ -32,8 +32,10 @@
     </ul>
   </li>
 
-  <li><a class="is-active" href="gallery.html">ГАЛЕРИЯ</a></li>
-  <li><a href="contacts.html">КОНТАКТИ</a></li>
+         <li><a href="gallery.html" class="is-active">ГАЛЕРИЯ</a></li>
+          <li><a href="contacts.html">КОНТАКТИ</a></li>
+          <li><a href="news.html">НОВИНИ</a></li>
+          <li><a href="sofiagradprix.html">SOFIA GRAND PRIX </a></li> 
 </ul>
 
     </nav>
@@ -41,65 +43,53 @@
 </header>
 
 <main class="container" style="padding: 22px 0 40px;">
-  <section class="intro reveal">
+  
+   
+  
+  </section>
+
+  <div class="section-head">
     <h2>Албум на Overfight</h2>
-    <p>a<p>
-  </section>
+  </div>
 
-  <section class="news reveal" style="margin-top: 18px;">
-    <div class="section-head">
-      <h2>Снимки</h2>
-      
-    </div>
+  <div class="of-gallery-grid">
 
-    <!-- Responsive gallery grid (inline style only here) -->
-    <div style="margin-top:12px; display:grid; gap: 12px; grid-template-columns: repeat(12, 1fr);">
-      <a class="news-card" href="#" style="grid-column: span 6; overflow:hidden;">
-         <img src="Resources/grupalapeta.png" alt="">
-             
-        <div class="news-body">
-          <h3>Тренировки</h3>
-          <p>Снимки от залата и групите.</p>
-        </div>
-      </a>
+    <a href="gallerytrenirovki.html" class="of-album">
+      <img src="Resources/grupalapeta.png" alt="">
+      <div class="of-album-body">
+        <h3>🥋 Тренировки</h3>
+        <p>Зала и групи</p>
+      </div>
+    </a>
 
-      <a class="news-card" href="#" style="grid-column: span 6; overflow:hidden;">
-        <img src="Resources/champs.png" alt="">
-        <div class="news-body">
-          <h3>шампиони</h3>
-          <p>Развитие и напредък.</p>
-        </div>
-      </a>
+    <a href="galleryuspehi.html" class="of-album">
+      <img src="Resources/champs.png" alt="">
+      <div class="of-album-body">
+        <h3>🏆 Успехи</h3>
+        <p>Медали и състезания</p>
+      </div>
+    </a>
 
-      <a class="news-card" href="#" style="grid-column: span 4; overflow:hidden;">
-        <img src="Resources/lqto.png" alt="">
-        <div class="news-body">
-          <h3>Подготовка</h3>
-          <p>Сила и техника.</p>
-        </div>
-      </a>
+    <a href="gallerylageri.html" class="of-album">
+      <img src="Resources/lqto.png" alt="">
+      <div class="of-album-body">
+        <h3>🏕️ Лагери</h3>
+        <p>Подготовка и сплотяване</p>
+      </div>
+    </a>
 
-      <a class="news-card" href="#" style="grid-column: span 4; overflow:hidden;">
-       <img src="Resources/deividss.png" alt="">
-        <div class="news-body">
-          <h3>deivid</h3>
-          <p>deivid e mn qk</p>
-        </div>
-      </a>
+  </div>
+</section>
 
-      <a class="news-card" href="#" style="grid-column: span 4; overflow:hidden;">
-        <img src="Resources/sensei12.png" alt="">
-        <div class="news-body">
-          <h3>Екип</h3>
-          <p>Отборен дух.</p>
-        </div>
-      </a>
-    </div>
 
-    <p class="muted" style="margin-top: 12px;">
-     
-    </p>
-  </section>
+<!-- OVERLAY -->
+<div class="of-gallery-overlay" id="ofGalleryOverlay">
+  <div class="of-gallery-modal">
+    <button class="of-gallery-close">✕</button>
+    <div class="of-gallery-images" id="ofGalleryImages"></div>
+  </div>
+</div>
+
 </main>
 
 <footer class="site-footer">
@@ -152,6 +142,59 @@
   }, { threshold: 0.12 });
 
   els.forEach(el => io.observe(el));
+</script>
+<script>
+const ofAlbums = {
+  training: [
+    "Resources/train1.jpg",
+    "Resources/train2.jpg",
+    "Resources/train3.jpg"
+  ],
+  champs: [
+    "Resources/champ1.jpg",
+    "Resources/champ2.jpg"
+  ],
+  prep: [
+    "Resources/prep1.jpg",
+    "Resources/prep2.jpg"
+  ],
+  deivid: [
+    "Resources/deivid1.jpg"
+  ],
+  team: [
+    "Resources/team1.jpg",
+    "Resources/team2.jpg"
+  ],
+  events: [
+    "Resources/event1.jpg"
+  ]
+};
+
+const overlay = document.getElementById("ofGalleryOverlay");
+const imagesBox = document.getElementById("ofGalleryImages");
+
+document.querySelectorAll(".of-album").forEach(album => {
+  album.addEventListener("click", () => {
+    const key = album.dataset.album;
+    imagesBox.innerHTML = "";
+
+    (ofAlbums[key] || []).forEach(src => {
+      const img = document.createElement("img");
+      img.src = src;
+      imagesBox.appendChild(img);
+    });
+
+    overlay.classList.add("open");
+  });
+});
+
+document.querySelector(".of-gallery-close").onclick = () => {
+  overlay.classList.remove("open");
+};
+
+overlay.addEventListener("click", e => {
+  if (e.target === overlay) overlay.classList.remove("open");
+});
 </script>
 
 </body>

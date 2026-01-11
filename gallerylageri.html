@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overfight – Лагери</title>
+  <link rel="icon" href="Resources/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="top">
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" href="index.html#top">
+      <img src="Resources/logo.png" alt="Overfight logo" class="brand-logo">
+      <span class="brand-name">Overfight</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Отвори меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" aria-label="Главна навигация">
+      <ul class="nav-list">
+        <li><a href="index.html">НАЧАЛО</a></li>
+
+        <li class="has-dropdown">
+          <a href="about.html" class="dropdown-trigger">ЗА КЛУБА</a>
+          <ul class="dropdown">
+            <li><a href="trainers.html">ТРЕНЬОРИ</a></li>
+            <li><a href="about.html">ОПИСАНИЕ</a></li>
+            <li><a href="schedule.html">ГРАФИК</a></li>
+          </ul>
+        </li>
+
+        <li><a href="gallery.html" class="is-active">ГАЛЕРИЯ</a></li>
+        <li><a href="contacts.html">КОНТАКТИ</a></li>
+        <li><a href="news.html">НОВИНИ</a></li>
+        <li><a href="sofiagradprix.html">SOFIA GRAND PRIX</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="container" style="padding:22px 0 40px">
+
+  <section class="intro">
+    <h2>Лагери</h2>
+    <p>Подготовка, лагери и сплотяване</p>
+  </section>
+
+  <section class="trainer-gallery" style="margin-top:18px">
+    <img src="Resources/lager1.jpg" alt="">
+    <img src="Resources/lager2.jpg" alt="">
+    <img src="Resources/lager3.jpg" alt="">
+    <img src="Resources/lager4.jpg" alt="">
+    <img src="Resources/lager5.jpg" alt="">
+    <img src="Resources/lager6.jpg" alt="">
+
+  </section>
+
+  <a href="gallery.html" class="link" style="margin-top:18px;display:inline-block">
+    ← Назад към галерията
+  </a>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div>
+      <div class="footer-brand">Карате клуб <strong>Overfight</strong></div>
+      <div class="muted">© <span id="y"></span> Всички права запазени.</div>
+    </div>
+
+    <div class="social">
+      <!-- Instagram -->
+      <a class="social-btn"
+         href="https://www.instagram.com/karate.club.overfight/"
+         target="_blank"
+         aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-2.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/>
+        </svg>
+      </a>
+
+      <!-- TikTok -->
+      <a class="social-btn"
+         href="https://www.tiktok.com/@karate_overfight"
+         target="_blank"
+         aria-label="TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 3v10.2a3.8 3.8 0 1 1-3-3.7V7.2a7 7 0 1 0 5 6.7V8.4c1.1 1 2.6 1.6 4 1.6V7.6c-1.6 0-3.1-.9-4-2.2A5.5 5.5 0 0 1 14 3z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+
+  const btn = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav");
+  btn?.addEventListener("click", () => {
+    const open = nav.classList.toggle("is-open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  const dropdownTrigger = document.querySelector(".dropdown-trigger");
+  const dropdownParent = dropdownTrigger?.closest(".has-dropdown");
+  dropdownTrigger?.addEventListener("click", (e) => {
+    e.preventDefault();
+    dropdownParent.classList.toggle("open");
+  });
+</script>
+
+</body>
+</html>
