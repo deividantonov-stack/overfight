@@ -1,187 +1,317 @@
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Контакти на карате клуб Overfight - телефон, имейл и адреси на залите" />
   <link rel="icon" href="Resources/logo.png" />
   <title>Overfight — Контакти</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="Resources/admin.css" />
+
+  <script type="module" src="Resources/app.js"></script>
+  <script type="module" src="Resources/transitions.js"></script>
+  <script src="Resources/admin.js" defer></script>
 </head>
 
 <body id="top">
-<header class="site-header">
-  <div class="container header-row">
-    <a class="brand" href="index.html#top">
-      <img src="Resources/logo.png" alt="Overfight logo" class="brand-logo" />
-      <span class="brand-name">Overfight</span>
-    </a>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html">
+        <img src="Resources/logo.png" alt="Overfight logo" class="brand-logo" />
+        <span class="brand-name">Overfight</span>
+      </a>
 
-    <button class="nav-toggle" aria-label="Отвори меню" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+      <button class="nav-toggle" aria-label="Отвори меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-    <nav class="nav" aria-label="Главна навигация">
-      <ul class="nav-list">
-        <li><a href="index.html">НАЧАЛО</a></li>
-
-        <li class="has-dropdown">
-          <a href="about.html" class="dropdown-trigger">ЗА КЛУБА</a>
-          <ul class="dropdown">
-            <li><a href="trainers.html">ТРЕНЬОРИ</a></li>
-            <li><a href="about.html">ОПИСАНИЕ</a></li>
-            <li><a href="schedule.html">ГРАФИК</a></li>
-          </ul>
-        </li>
-
-          <li><a href="gallery.html">ГАЛЕРИЯ</a></li>
+      <nav class="nav" aria-label="Главна навигация">
+        <ul class="nav-list">
+          <li><a href="index.html">НАЧАЛО</a></li>
           <li><a href="contacts.html" class="is-active">КОНТАКТИ</a></li>
+          <li class="has-dropdown">
+            <a href="about.html" class="dropdown-trigger">ЗА КЛУБА</a>
+            <ul class="dropdown">
+              <li><a href="trainers.html">ТРЕНЬОРИ</a></li>
+              <li><a href="about.html">ОПИСАНИЕ</a></li>
+              <li><a href="schedule.html">ГРАФИК</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">ГАЛЕРИЯ</a></li>
           <li><a href="news.html">НОВИНИ</a></li>
-          <li><a href="sofiagradprix.html">SOFIA GRAND PRIX </a></li> 
-      </ul>
-    </nav>
-  </div>
-</header>
+          <li><a href="sofiagradprix.html">SOFIA GRAND PRIX</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<main class="container" style="padding: 22px 0 40px;">
-  <section class="intro reveal">
-    <h2>Сенсей Иво Мукански </h2>
-    <h3>📞 0899111290<h3>
-    <h3>📩 overfightbg@gmail.com</h3>
-   
-  </section>
+  <!-- Main Content -->
+  <main class="container page-content">
+    <div class="section-header reveal">
+      <h2>Контакти</h2>
+      <p>Свържете се с нас или ни посетете в някоя от нашите зали</p>
+    </div>
 
-  <section class="feature feature-locations reveal">
-
-    <div class="feature-body">
-      
-
-
-
-    <div class="feature-media">
-      <div class="news">
-        <div class="section-head">
-          <h2>📍Локации</h2>
-          
+    <!-- Contact Info Cards -->
+    <div class="contact-info reveal-stagger">
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <i class="fa-solid fa-user"></i>
         </div>
+        <h3 class="contact-card-title">Сенсей Иво Мукански</h3>
+        <p class="contact-card-value">Президент на клуба</p>
+      </div>
 
-        <div class="gyms-grid">
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <i class="fa-solid fa-phone"></i>
+        </div>
+        <h3 class="contact-card-title">Телефон</h3>
+        <p class="contact-card-value">
+          <a href="tel:+359899111290" style="color: var(--accent-ice);">0899 111 290</a>
+        </p>
+      </div>
 
-  <!-- Location 1 -->
-  <div style="border:1px solid rgba(255,255,255,.10); border-radius: 16px; overflow:hidden; background: rgba(15,22,32,.45);">
-    <div style="padding: 12px 12px 10px;">
-      <h3 style="margin:0 0 4px; font-size: 15px;">Зала Гео Милев</h3>
-      <div class="muted" style="font-size: 13px;">Тренировъчна зала / адрес 1</div>
-    </div>
-    <iframe
-      src="https://www.google.com/maps?q=Edison%2029&output=embed"
-      width="100%"
-      height="230"
-      style="border:0; display:block;"
-      loading="lazy"></iframe>
-  </div>
-
-  <!-- Location 2 -->
-  <div style="border:1px solid rgba(255,255,255,.10); border-radius: 16px; overflow:hidden; background: rgba(15,22,32,.45);">
-    <div style="padding: 12px 12px 10px;">
-      <h3 style="margin:0 0 4px; font-size: 15px;">Зала Иван Вазов</h3>
-      <div class="muted" style="font-size: 13px;">Тренировъчна зала / адрес 2</div>
-    </div>
-    <iframe
-      src="https://www.google.com/maps?q=Boulevard%20Petko%20Karavelov%205&output=embed"
-      width="100%"
-      height="230"
-      style="border:0; display:block;"
-      loading="lazy"></iframe>
-  </div>
-  <!-- Location 3 -->
-<div style="border:1px solid rgba(255,255,255,.10); border-radius: 16px; overflow:hidden; background: rgba(15,22,32,.45);">
-  <div style="padding: 12px 12px 10px;">
-    <h3 style="margin:0 0 4px; font-size: 15px;">Зала Силвър Сити</h3>
-    <div class="muted" style="font-size: 13px;">
-      ул. „Емилиян Станев“ 2А, бл. 6, София
-    </div>
-  </div>
-
-  <iframe
-    title="Zala Krastova Vada"
-    src="https://www.google.com/maps?q=ул.%20Емилиян%20Станев%202А,%20София&output=embed"
-    width="100%"
-    height="230"
-    style="border:0; display:block;"
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
-
-
-</div>
-
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <h3 class="contact-card-title">Имейл</h3>
+        <p class="contact-card-value">
+          <a href="mailto:overfightbg@gmail.com" style="color: var(--accent-ice);">overfightbg@gmail.com</a>
+        </p>
       </div>
     </div>
-  </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container footer-row">
-    <div>
-      <div class="footer-brand">Карате клуб <strong>Overfight</strong></div>
-      <div class="muted">© <span id="y"></span> Всички права запазени.</div>
+    <!-- Locations Section -->
+    <div class="section-head reveal" style="margin-top: var(--space-2xl);">
+      <h2><i class="fa-solid fa-location-dot"></i> Локации</h2>
     </div>
 
-    <div class="footer-links">
-      <a href="about.html">Политика</a>
-      <a href="contacts.html">Контакти</a>
-      <a href="schedule.html">График</a>
+    <div class="location-grid reveal-stagger">
+      <!-- Location 1 -->
+      <div class="location-card" data-location="geo">
+        <h3 class="location-card-name">
+          <i class="fa-solid fa-map-marker-alt" style="color: var(--brand-red);"></i>
+          Зала Гео Милев
+        </h3>
+        <p class="location-card-address">ул. „Едисон" 29, София</p>
+      </div>
+
+      <!-- Location 2 -->
+      <div class="location-card" data-location="ivan">
+        <h3 class="location-card-name">
+          <i class="fa-solid fa-map-marker-alt" style="color: var(--accent-ice);"></i>
+          Зала Иван Вазов
+        </h3>
+        <p class="location-card-address">бул. „Петко Каравелов" 5, София</p>
+      </div>
+
+      <!-- Location 3 -->
+      <div class="location-card" data-location="silver">
+        <h3 class="location-card-name">
+          <i class="fa-solid fa-map-marker-alt" style="color: #FFD700;"></i>
+          Зала Силвър Сити
+        </h3>
+        <p class="location-card-address">ул. „Емилиян Станев" 2А, бл. 6, София</p>
+      </div>
     </div>
 
-    <div class="social">
-      <!-- Instagram -->
-      <a class="social-btn" href="https://www.instagram.com/karate.club.overfight/" target="_blank" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-2.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/>
-        </svg>
-      </a>
+    <!-- View Map Button -->
+    <div style="text-align: center; margin-top: var(--space-xl);" class="reveal">
+      <button class="btn btn-primary btn-xl" id="openMapBtn">
+        <i class="fa-solid fa-map"></i> Виж на картата
+      </button>
+    </div>
+  </main>
 
-      <!-- TikTok -->
-      <a class="social-btn" href="https://www.tiktok.com/@karate_overfight" target="_blank" aria-label="TikTok">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M14 3v10.2a3.8 3.8 0 1 1-3-3.7V7.2a7 7 0 1 0 5 6.7V8.4c1.1 1 2.6 1.6 4 1.6V7.6c-1.6 0-3.1-.9-4-2.2A5.5 5.5 0 0 1 14 3z"/>
-        </svg>
-      </a>
+  <!-- Map Modal -->
+  <div class="map-modal" id="mapModal">
+    <div class="map-modal-content">
+      <button class="map-modal-close" id="closeMapBtn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="map-container"></div>
     </div>
   </div>
-</footer>
 
-<script>
-  const btn = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".nav");
-  btn?.addEventListener("click", () => {
-    const open = nav.classList.toggle("is-open");
-    btn.setAttribute("aria-expanded", open ? "true" : "false");
-  });
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>
+        <div class="footer-brand">Карате клуб <strong>Overfight</strong></div>
+        <div class="muted">© <span id="y"></span> Всички права запазени.</div>
+      </div>
 
-  document.getElementById("y").textContent = new Date().getFullYear();
+      <nav class="footer-links">
+        <a href="about.html">Политика</a>
+        <a href="contacts.html">Контакти</a>
+        <a href="schedule.html">График</a>
+      </nav>
 
-  // ✅ reveal toggle (работи и надолу и нагоре)
-  const els = document.querySelectorAll(".reveal");
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((en) => {
-      if (en.isIntersecting) en.target.classList.add("is-visible");
-      else en.target.classList.remove("is-visible");
+      <div class="social">
+        <a class="social-btn" href="https://www.instagram.com/karate.club.overfight/" target="_blank" rel="noopener"
+          aria-label="Instagram">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-2.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z" />
+          </svg>
+        </a>
+        <a class="social-btn" href="https://www.tiktok.com/@karate_overfight" target="_blank" rel="noopener"
+          aria-label="TikTok">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M14 3v10.2a3.8 3.8 0 1 1-3-3.7V7.2a7 7 0 1 0 5 6.7V8.4c1.1 1 2.6 1.6 4 1.6V7.6c-1.6 0-3.1-.9-4-2.2A5.5 5.5 0 0 1 14 3z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <script>
+    // Map Modal Logic
+    const mapModal = document.getElementById('mapModal');
+    const openMapBtn = document.getElementById('openMapBtn');
+    const closeMapBtn = document.getElementById('closeMapBtn');
+    const locationCards = document.querySelectorAll('.location-card');
+
+    let map = null;
+    let markers = {};
+
+    // Gym Locations
+    const locations = {
+      geo: {
+        name: 'Зала Гео Милев',
+        address: 'ул. „Едисон" 29, София',
+        coords: [42.6841, 23.3567],
+        color: '#E11D48'
+      },
+      ivan: {
+        name: 'Зала Иван Вазов',
+        address: 'бул. „Петко Каравелов" 5, София',
+        coords: [42.6875, 23.3181],
+        color: '#A7F3FF'
+      },
+      silver: {
+        name: 'Зала Силвър Сити',
+        address: 'ул. „Емилиян Станев" 2А, бл. 6, София',
+        coords: [42.6563, 23.2976],
+        color: '#FFD700'
+      }
+    };
+
+    // Custom Marker Icon
+    function createMarkerIcon(color) {
+      return L.divIcon({
+        className: 'custom-marker',
+        html: `<div style="
+          width: 24px;
+          height: 24px;
+          background: ${color};
+          border: 3px solid white;
+          border-radius: 50%;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        "></div>`,
+        iconSize: [24, 24],
+        iconAnchor: [12, 12],
+        popupAnchor: [0, -16]
+      });
+    }
+
+    // Initialize Map
+    function initMap(focusLocation = null) {
+      if (map) {
+        map.remove();
+      }
+
+      // Center on Sofia
+      const center = focusLocation ? locations[focusLocation].coords : [42.6700, 23.3200];
+      const zoom = focusLocation ? 15 : 12;
+
+      map = L.map('map-container').setView(center, zoom);
+
+      // Dark tile layer (CartoDB Dark Matter)
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+      }).addTo(map);
+
+      // Add markers for all locations
+      Object.keys(locations).forEach(key => {
+        const loc = locations[key];
+        const marker = L.marker(loc.coords, { icon: createMarkerIcon(loc.color) })
+          .addTo(map)
+          .bindPopup(`
+            <div style="text-align: center; padding: 8px;">
+              <strong style="font-size: 14px;">${loc.name}</strong><br>
+              <span style="font-size: 12px; color: #888;">${loc.address}</span>
+            </div>
+          `);
+        markers[key] = marker;
+
+        if (focusLocation === key) {
+          marker.openPopup();
+        }
+      });
+    }
+
+    // Open Modal
+    function openModal(focusLocation = null) {
+      mapModal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+
+      // Initialize map after modal is visible
+      setTimeout(() => {
+        initMap(focusLocation);
+      }, 100);
+    }
+
+    // Close Modal
+    function closeModal() {
+      mapModal.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    // Event Listeners
+    openMapBtn.addEventListener('click', () => openModal());
+    closeMapBtn.addEventListener('click', closeModal);
+
+    mapModal.addEventListener('click', (e) => {
+      if (e.target === mapModal) closeModal();
     });
-  }, { threshold: 0.12 });
 
-  els.forEach(el => io.observe(el));
-</script>
+    locationCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const location = card.dataset.location;
+        openModal(location);
+      });
+    });
+
+    // ESC key to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mapModal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+  </script>
 
 </body>
-<script>
-  const dropdownTrigger = document.querySelector(".dropdown-trigger");
-  const dropdownParent = dropdownTrigger.closest(".has-dropdown");
 
-  dropdownTrigger.addEventListener("click", (e) => {
-    e.preventDefault();
-    dropdownParent.classList.toggle("open");
-  });
-</script>
 </html>

@@ -1,171 +1,134 @@
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Сенпай Дейвид Антонов – треньор в карате клуб Overfight">
-  <link rel="icon" href="Resources/logo.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Сенпай Дейвид Антонов – Помощник-треньор на карате клуб Overfight" />
+  <link rel="icon" href="Resources/logo.png" />
   <title>Сенпай Дейвид Антонов | Overfight</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="Resources/admin.css" />
+
+  <script type="module" src="Resources/app.js"></script>
+  <script type="module" src="Resources/transitions.js"></script>
+  <script src="Resources/admin.js" defer></script>
 </head>
 
 <body id="top">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html">
+        <img src="Resources/logo.png" alt="Overfight logo" class="brand-logo" />
+        <span class="brand-name">Overfight</span>
+      </a>
 
-<!-- ================= HEADER ================= -->
-<header class="site-header">
-  <div class="container header-row">
+      <button class="nav-toggle" aria-label="Отвори меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-    <a href="index.html#top" class="brand">
-      <img src="Resources/logo.png" alt="Лого на карате клуб Overfight" class="brand-logo">
-      <span class="brand-name">Overfight</span>
-    </a>
-
-    <button class="nav-toggle" aria-label="Отвори меню" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="nav" aria-label="Главна навигация">
-      <ul class="nav-list">
-        <li><a href="index.html">Начало</a></li>
-
-        <li class="has-dropdown">
-          <a href="#" class="dropdown-trigger">За клуба</a>
-          <ul class="dropdown">
-            <li><a href="trainers.html" class="is-active">Треньори</a></li>
-            <li><a href="about.html">Описание</a></li>
-            <li><a href="schedule.html">График</a></li>
-          </ul>
-        </li>
-
-          <li><a href="gallery.html">ГАЛЕРИЯ</a></li>
+      <nav class="nav" aria-label="Главна навигация">
+        <ul class="nav-list">
+          <li><a href="index.html">НАЧАЛО</a></li>
           <li><a href="contacts.html">КОНТАКТИ</a></li>
+          <li class="has-dropdown">
+            <a href="about.html" class="dropdown-trigger is-active">ЗА КЛУБА</a>
+            <ul class="dropdown">
+              <li><a href="trainers.html">ТРЕНЬОРИ</a></li>
+              <li><a href="about.html">ОПИСАНИЕ</a></li>
+              <li><a href="schedule.html">ГРАФИК</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">ГАЛЕРИЯ</a></li>
           <li><a href="news.html">НОВИНИ</a></li>
-          <li><a href="sofiagradprix.html">SOFIA GRAND PRIX </a></li> 
-      </ul>
-    </nav>
-
-  </div>
-</header>
-
-<!-- ================= MAIN ================= -->
-<main class="container page-content">
-
-  <!-- INTRO -->
-  <section class="intro reveal">
-    <h1>Сенпай Дейвид Антонов</h1>
-    <p class="subtitle">II дан • Треньор за деца и младежи • </p>
-  </section>
-
-  <!-- PROFILE -->
-  <section class="profile reveal">
-    <article class="profile-card">
-
-  <table width="100%" cellpadding="10">
-    <tr>
-      <!-- СНИМКА -->
-      <td valign="top" width="320">
-        <img src="Resources/deivid.png"
-             alt="Сенпай Дейвид Антонов"
-             width="300">
-      </td>
-
-      <!-- ТЕКСТ -->
-      <td valign="top">
-
-        <h2>Дейвид Антонов</h2>
-        <p><strong>II дан • Треньор за деца и младежи</strong></p>
-
-        <p>
-          Сенпай Дейвид Антонов е дългогодишен състезател и треньор
-          по карате с над 10 години опит в тренировъчния процес.
-        </p>
-
-        <p>
-          Работи основно с деца и младежи, като поставя силен акцент
-          върху техника, дисциплина и изграждане на състезателен дух.
-        </p>
-
-        <hr>
-
-        <h3>Спортни успехи</h3>
-
-        <ul>
-          <li>Световен шампион</li>
-          <li>Многократен медалист от международни турнири</li>
-          <li>Активен състезател и треньор</li>
+          <li><a href="sofiagradprix.html">SOFIA GRAND PRIX</a></li>
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <br>
-
-        <a href="trainers.html" class="link-back">
-          ← Назад към треньори
-        </a>
-
-      </td>
-    </tr>
-  </table>
-
-</article>
-
-     
-  </section>
-
-</main>
-
-<!-- ================= FOOTER ================= -->
-<footer class="site-footer">
-  <div class="container footer-row">
-
-    <div class="footer-info">
-      <div class="footer-brand">
-        Карате клуб <strong>Overfight</strong>
-      </div>
-      <div class="muted">
-        © <span id="year"></span> Всички права запазени.
-      </div>
+  <!-- Main Content -->
+  <main class="container profile-section">
+    <div class="profile-header reveal">
+      <h1>Сенпай Дейвид Антонов</h1>
+      <p class="subtitle">
+        II дан <i class="fa-solid fa-circle" style="font-size: 0.4em;"></i>
+        Помощник-треньор на карате клуб Overfight
+      </p>
     </div>
 
-    <nav class="footer-links" aria-label="Футър навигация">
-      <a href="about.html">Политика</a>
-      <a href="contacts.html">Контакти</a>
-      <a href="schedule.html">График</a>
-    </nav>
+    <div class="profile-content reveal">
+      <div class="profile-image">
+        <img src="Resources/deivid44.png" alt="Сенпай Дейвид Антонов" />
+      </div>
 
-  </div>
-</footer>
+      <div class="profile-body">
+        <h2>Дейвид Антонов</h2>
+        <p><strong>II дан <i class="fa-solid fa-circle" style="font-size: 0.4em;"></i> Помощник-треньор</strong></p>
 
-<!-- ================= SCRIPTS ================= -->
-<script>
-  // Mobile navigation
-  const navBtn = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.nav');
+        <p>
+          Сенпай Дейвид Антонов е помощник-треньор в карате клуб
+          <strong>Overfight</strong> с богат състезателен опит и
+          множество национални и международни успехи.
+        </p>
 
-  navBtn?.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('is-open');
-    navBtn.setAttribute('aria-expanded', isOpen);
-  });
+        <p>
+          Като активен състезател и треньор, той съчетава практически
+          опит с методична подготовка на младите каратисти.
+        </p>
 
-  // Dropdown menu
-  document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
-    trigger.addEventListener('click', e => {
-      e.preventDefault();
-      trigger.closest('.has-dropdown').classList.toggle('is-open');
-    });
-  });
+        <h3>Роля и принос</h3>
+        <ul>
+          <li>Помощник-треньор с активен състезателен опит</li>
+          <li>Работа с деца и напреднали групи</li>
+          <li>Множество медали от състезания</li>
+        </ul>
 
-  // Current year
-  document.getElementById('year').textContent = new Date().getFullYear();
+        <a href="trainers.html" class="link-back">
+          <i class="fa-solid fa-arrow-left"></i> Назад към треньори
+        </a>
+      </div>
+    </div>
+  </main>
 
-  // Reveal animation
-  const revealElements = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      entry.target.classList.toggle('is-visible', entry.isIntersecting);
-    });
-  }, { threshold: 0.15 });
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>
+        <div class="footer-brand">Карате клуб <strong>Overfight</strong></div>
+        <div class="muted">© <span id="y"></span> Всички права запазени.</div>
+      </div>
 
-  revealElements.forEach(el => observer.observe(el));
-</script>
+      <nav class="footer-links">
+        <a href="about.html">Политика</a>
+        <a href="contacts.html">Контакти</a>
+        <a href="schedule.html">График</a>
+      </nav>
+
+      <div class="social">
+        <a class="social-btn" href="https://www.instagram.com/karate.club.overfight/" target="_blank" rel="noopener"
+          aria-label="Instagram">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-2.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z" />
+          </svg>
+        </a>
+        <a class="social-btn" href="https://www.tiktok.com/@karate_overfight" target="_blank" rel="noopener"
+          aria-label="TikTok">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M14 3v10.2a3.8 3.8 0 1 1-3-3.7V7.2a7 7 0 1 0 5 6.7V8.4c1.1 1 2.6 1.6 4 1.6V7.6c-1.6 0-3.1-.9-4-2.2A5.5 5.5 0 0 1 14 3z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
 
 </body>
+
 </html>

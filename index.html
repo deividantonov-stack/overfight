@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Карате клуб Overfight - утвърден спортен клуб по карате в София с дългогодишна история и доказани резултати." />
   <link rel="icon" href="Resources/logo.png" />
   <link rel="apple-touch-icon" href="Resources/logo.png" />
   <title>Overfight — Начало</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="Resources/admin.css" />
+
+  <!-- Scripts -->
+  <script type="module" src="Resources/app.js"></script>
+  <script type="module" src="Resources/transitions.js"></script>
+  <script src="Resources/admin.js" defer></script>
 </head>
 
 <body id="top">
   <!-- Header -->
-  <header class="site-header" id="siteHeader">
+  <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="#top" aria-label="Към началото">
         <img src="Resources/logo.png" alt="Overfight logo" class="brand-logo" />
@@ -25,6 +45,7 @@
       <nav class="nav" aria-label="Главна навигация">
         <ul class="nav-list">
           <li><a class="is-active" href="index.html">НАЧАЛО</a></li>
+          <li><a href="contacts.html">КОНТАКТИ</a></li>
 
           <li class="has-dropdown">
             <a href="about.html" class="dropdown-trigger">ЗА КЛУБА</a>
@@ -36,200 +57,492 @@
           </li>
 
           <li><a href="gallery.html">ГАЛЕРИЯ</a></li>
-          <li><a href="contacts.html">КОНТАКТИ</a></li>
           <li><a href="news.html">НОВИНИ</a></li>
-          <li><a href="sofiagradprix.html">SOFIA GRAND PRIX </a></li> 
-           
-
+          <li><a href="sofiagradprix.html">SOFIA GRAND PRIX</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero hero-center">
+  <!-- Hero Section -->
+  <section class="hero">
     <div class="hero-bg" role="img" aria-label="Hero background"></div>
-  
-        
-
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Добре дошли в<br>карате клуб <span style="color: var(--brand-red);">Overfight</span>
+      </h1>
+      <p class="hero-subtitle">
+        Място, където спортът, дисциплината и характерът вървят ръка за ръка.
+      </p>
+      <div class="hero-actions">
+        <a href="schedule.html" class="btn btn-primary btn-xl">
+          <i class="fa-regular fa-calendar"></i> График
+        </a>
+        <a href="contacts.html" class="btn btn-ghost btn-xl">
+          <i class="fa-regular fa-envelope"></i> Контакти
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Main -->
-  <main class="container main-grid">
-    <!-- Content -->
-    <section class="content">
-      <article class="intro reveal">
-        <h2>Добре дошли</h2>
-        <p>
-          Добре дошли в карате клуб Overfight – място, където спортът, дисциплината и характерът вървят ръка за ръка.
-          Тук при нас не изграждаме просто състезатели, а силни личности с увереност, уважение и стремеж към развитие.
-        </p>
-      </article>
+  <!-- Gyms Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Нашите зали</h2>
+        <p>Тренировки за всички възрасти в три удобни локации в София</p>
+      </div>
 
-      <!-- Feature blocks -->
-      <div class="gyms-grid">
+      <div class="feature-grid reveal-stagger">
+        <!-- Gym 1 -->
+        <article class="feature-card">
+          <div class="feature-card-media">
+            <img src="Resources/lape.JPEG" alt="Зала Иван Вазов" loading="lazy" />
+          </div>
+          <div class="feature-card-body">
+            <h3 class="feature-card-title">Зала Иван Вазов</h3>
+            <p class="feature-card-desc">Тренировки за всички възрасти</p>
+            <ul class="feature-card-list">
+              <li>Координация</li>
+              <li>Фокус</li>
+              <li>Дисциплина</li>
+            </ul>
+            <a class="btn btn-secondary btn-full" href="contacts.html">
+              <i class="fa-solid fa-location-dot"></i> Виж адрес
+            </a>
+          </div>
+        </article>
 
-  <article class="feature reveal">
-    <div class="feature-media">
-      <img src="Resources/lape.JPEG" alt="Детска група 3-6" />
-    </div>
-    <div class="feature-body">
-      <h3>Зала Иван Вазов</h3>
-      <p>Тренировки за всички възрасти</p>
-      <ul class="checklist">
-        <li>Координация</li>
-        <li>Фокус</li>
-        <li>Дисциплина</li>
-      </ul>
-      <a class="btn btn-secondary" href="contacts.html">Виж Адрес</a>
-    </div>
-  </article>
+        <!-- Gym 2 -->
+        <article class="feature-card">
+          <div class="feature-card-media">
+            <img src="Resources/lape1.JPEG" alt="Зала Гео Милев" loading="lazy" />
+          </div>
+          <div class="feature-card-body">
+            <h3 class="feature-card-title">Зала Гео Милев</h3>
+            <p class="feature-card-desc">Тренировки за всички възрасти</p>
+            <ul class="feature-card-list">
+              <li>Физическа подготовка</li>
+              <li>Постоянство</li>
+              <li>Самоувереност</li>
+            </ul>
+            <a class="btn btn-secondary btn-full" href="contacts.html">
+              <i class="fa-solid fa-location-dot"></i> Виж адрес
+            </a>
+          </div>
+        </article>
 
-  <article class="feature is-reverse reveal">
-    <div class="feature-media">
-      <img src="Resources/lape1.JPEG" alt="Група 10-15" />
-    </div>
-    <div class="feature-body">
-      <h3>Зала Гео Милев</h3>
-      <p>
-        Тренировки за всички възрасти
-      </p>
-      <ul class="checklist">
-        <li>Физическа подготовка</li>
-        <li>Постоянство и целеполагане</li>
-        <li>Самоувереност</li>
-      </ul>
-      <a class="btn btn-secondary" href="contacts.html">Виж Адрес</a>
-    </div>
-  </article>
-   
-  
-  <article class="feature is-reverse reveal">
-    <div class="feature-media">
-      <img src="Resources/lape5.png" alt="Група 10-15" />
-    </div>
-     <div class="feature-body">
-      <h3>Зала Силвър Сити</h3>
-      <p>
-        Тренировки за всички възрасти
-      </p>
-      <ul class="checklist">
-        <li>Физическа подготовка</li>
-        <li>Постоянство и целеполагане</li>
-        <li>Самоувереност</li>
-      </ul>
-      <a class="btn btn-secondary" href="contacts.html">Виж Адрес</a>
-    </div>
-  </article>
-   <article class="feature is-reverse reveal">
-    <div class="feature-media">
-      <h1>soon...</h1>
-    
-    
-  </article>
-  
-  
+        <!-- Gym 3 -->
+        <article class="feature-card">
+          <div class="feature-card-media">
+            <img src="Resources/lape5.png" alt="Зала Силвър Сити" loading="lazy" />
+          </div>
+          <div class="feature-card-body">
+            <h3 class="feature-card-title">Зала Силвър Сити</h3>
+            <p class="feature-card-desc">Тренировки за всички възрасти</p>
+            <ul class="feature-card-list">
+              <li>Физическа подготовка</li>
+              <li>Постоянство</li>
+              <li>Самоувереност</li>
+            </ul>
+            <a class="btn btn-secondary btn-full" href="contacts.html">
+              <i class="fa-solid fa-location-dot"></i> Виж адрес
+            </a>
+          </div>
+        </article>
+      </div>
 
-</div>
+      <!-- Interactive Map -->
+      <div class="gym-map-section reveal" style="margin-top: var(--space-xl);">
+        <div class="gym-map-header"
+          style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-md);">
+          <h3 style="font-size: 18px; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-map-location-dot" style="color: var(--brand-red);"></i>
+            Всички локации на картата
+          </h3>
+          <span style="font-size: 13px; color: var(--text-muted);">
+            <i class="fa-solid fa-hand-pointer"></i> Посочете зала за детайли
+          </span>
+        </div>
+        <div class="gym-map-wrapper">
+          <div id="gyms-map" class="gym-map-container"></div>
+          <!-- Map Navigation Arrows -->
+          <div class="gym-map-nav">
+            <button class="gym-map-arrow gym-map-prev" id="mapPrevBtn" aria-label="Previous gym">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="gym-map-nav-info" id="mapNavInfo">
+              <span class="gym-map-nav-name" id="mapNavName">Всички зали</span>
+              <span class="gym-map-nav-dots" id="mapNavDots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </span>
+            </div>
+            <button class="gym-map-arrow gym-map-next" id="mapNextBtn" aria-label="Next gym">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
 
-      </article>
+    </div>
+  </section>
 
-      
+  <!-- Achievements Section -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="feature reveal">
         <div class="feature-media">
-          <img src="Resources/champs.png"
-               alt="Група 7-8" />
+          <img src="Resources/champs.png" alt="Постижения на клуба" loading="lazy" />
         </div>
         <div class="feature-body">
           <h3>Постижения</h3>
           <p>
             Карате като инструмент за здравословно развитие, дисциплина и безопасни
-            основи на самозащита.
+            основи на самозащита. Нашите състезатели редовно се връщат с медали от
+            национални и международни състезания.
           </p>
-          <ul class="checklist">
-            
-          </ul>
-      
+          <a href="gallery.html" class="btn btn-primary">
+            <i class="fa-solid fa-trophy"></i> Виж галерия
+          </a>
         </div>
-      </article>
-    </section>
+      </div>
+    </div>
+  </section>
 
-   
-   
-  
-  </main>
-
-  <!-- Footer с работещи Instagram и TikTok бутони -->
+  <!-- Footer -->
   <footer class="site-footer">
-  <div class="container footer-row">
-    <div>
-      <div class="footer-brand">Карате клуб <strong>Overfight</strong></div>
-      <div class="muted">© <span id="y"></span> Всички права запазени.</div>
+    <div class="container footer-row">
+      <div>
+        <div class="footer-brand">Карате клуб <strong>Overfight</strong></div>
+        <div class="muted">© <span id="y"></span> Всички права запазени.</div>
+      </div>
+
+      <nav class="footer-links">
+        <a href="about.html">Политика</a>
+        <a href="contacts.html">Контакти</a>
+        <a href="schedule.html">График</a>
+      </nav>
+
+      <div class="social">
+        <a class="social-btn" href="https://www.instagram.com/karate.club.overfight/" target="_blank" rel="noopener"
+          aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-2.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z" />
+          </svg>
+        </a>
+
+        <a class="social-btn" href="https://www.tiktok.com/@karate_overfight" target="_blank" rel="noopener"
+          aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M14 3v10.2a3.8 3.8 0 1 1-3-3.7V7.2a7 7 0 1 0 5 6.7V8.4c1.1 1 2.6 1.6 4 1.6V7.6c-1.6 0-3.1-.9-4-2.2A5.5 5.5 0 0 1 14 3z" />
+          </svg>
+        </a>
+      </div>
     </div>
+  </footer>
 
-    <div class="footer-links">
-      <a href="about.html">Политика</a>
-      <a href="contacts.html">Контакти</a>
-      <a href="schedule.html">График</a>
-    </div>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-    <div class="social">
-      <!-- Instagram бутон -->
-      <a class="social-btn" href="https://www.instagram.com/karate.club.overfight/" target="_blank" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-2.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/>
-        </svg>
-      </a>
-
-      <!-- TikTok бутон -->
-      <a class="social-btn" href="https://www.tiktok.com/@karate_overfight" target="_blank" aria-label="TikTok">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M14 3v10.2a3.8 3.8 0 1 1-3-3.7V7.2a7 7 0 1 0 5 6.7V8.4c1.1 1 2.6 1.6 4 1.6V7.6c-1.6 0-3.1-.9-4-2.2A5.5 5.5 0 0 1 14 3z"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</footer>
-
-<script>
-  // Footer година
-  document.getElementById("y").textContent = new Date().getFullYear();
-</script>
-
+  <!-- Interactive Gym Map Script -->
   <script>
-    // Навигация мобилен бутон
-    const btn = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".nav");
-    btn?.addEventListener("click", () => {
-      const open = nav.classList.toggle("is-open");
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-    });
+    (function initGymsMap() {
+      // Wait for DOM and Leaflet to be ready
+      const mapContainer = document.getElementById('gyms-map');
+      if (!mapContainer || typeof L === 'undefined') {
+        // Retry after a short delay (for SPA navigation)
+        setTimeout(initGymsMap, 100);
+        return;
+      }
 
-    // Footer година
-    document.getElementById("y").textContent = new Date().getFullYear();
+      // Prevent re-initialization
+      if (mapContainer._leaflet_id) return;
 
-    // Reveal ефект
-    const els = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(en => {
-        en.isIntersecting
-          ? en.target.classList.add("is-visible")
-          : en.target.classList.remove("is-visible");
+      // Gym locations with coordinates from contacts.html
+      const gyms = {
+        'ivan': {
+          name: 'Зала Иван Вазов',
+          address: 'бул. „Петко Каравелов" 5, София',
+          coords: [42.6875, 23.3181],
+          color: '#A7F3FF',
+          cardIndex: 0
+        },
+        'geo': {
+          name: 'Зала Гео Милев',
+          address: 'ул. „Едисон" 29, София',
+          coords: [42.6841, 23.3567],
+          color: '#E11D48',
+          cardIndex: 1
+        },
+        'silver': {
+          name: 'Зала Силвър Сити',
+          address: 'ул. „Емилиян Станев" 2А, бл. 6, София',
+          coords: [42.6563, 23.2976],
+          color: '#FFD700',
+          cardIndex: 2
+        }
+      };
+
+      // Calculate bounds to fit all markers
+      const allCoords = Object.values(gyms).map(g => g.coords);
+      const bounds = L.latLngBounds(allCoords);
+
+      // Initialize map with all markers visible
+      const map = L.map('gyms-map', {
+        scrollWheelZoom: false, // Prevent accidental zoom while scrolling
+        zoomControl: true,
+        dragging: true
       });
-    }, { threshold: 0.12 });
 
-    els.forEach(el => io.observe(el));
+      // Fit map to show all markers with padding
+      map.fitBounds(bounds.pad(0.3));
+
+      // Prevent zoom control clicks from scrolling page
+      setTimeout(() => {
+        const zoomControls = mapContainer.querySelectorAll('.leaflet-control-zoom a');
+        zoomControls.forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          });
+          // Override href to prevent anchor navigation
+          btn.setAttribute('href', 'javascript:void(0)');
+        });
+      }, 100);
+
+      // Enable dragging with two fingers on touch devices
+      if (L.Browser.mobile) {
+        map.on('click', function () {
+          if (!map.dragging.enabled()) {
+            map.dragging.enable();
+          }
+        });
+      }
+
+      // Dark tile layer (CartoDB Dark Matter) 
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+      }).addTo(map);
+
+      // Create custom marker icon
+      function createMarkerIcon(color, isActive = false) {
+        const size = isActive ? 32 : 24;
+        const border = isActive ? 4 : 3;
+        return L.divIcon({
+          className: 'custom-gym-marker',
+          html: `<div style="
+            width: ${size}px;
+            height: ${size}px;
+            background: ${color};
+            border: ${border}px solid white;
+            border-radius: 50%;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+            ${isActive ? 'transform: scale(1.2);' : ''}
+          "></div>`,
+          iconSize: [size, size],
+          iconAnchor: [size / 2, size / 2],
+          popupAnchor: [0, -size / 2]
+        });
+      }
+
+      // Add markers for all gyms
+      const markers = {};
+      Object.keys(gyms).forEach(key => {
+        const gym = gyms[key];
+        const marker = L.marker(gym.coords, {
+          icon: createMarkerIcon(gym.color)
+        }).addTo(map);
+
+        marker.bindPopup(`
+          <div style="text-align: center; padding: 8px; min-width: 160px;">
+            <div style="font-size: 14px; font-weight: 600; margin-bottom: 4px;">${gym.name}</div>
+            <div style="font-size: 12px; color: #666;">${gym.address}</div>
+            <a href="contacts.html" style="display: inline-block; margin-top: 8px; font-size: 12px; color: #E11D48; text-decoration: none;">
+              <i class="fa-solid fa-directions"></i> Виж детайли
+            </a>
+          </div>
+        `, { closeButton: false });
+
+        markers[key] = marker;
+      });
+
+      // Get gym cards
+      const gymCards = document.querySelectorAll('.feature-grid .feature-card');
+
+      // Map gym card index to gym key
+      const cardToGym = ['ivan', 'geo', 'silver'];
+
+      // Hover/touch interaction on gym cards
+      gymCards.forEach((card, index) => {
+        const gymKey = cardToGym[index];
+        if (!gymKey || !markers[gymKey]) return;
+
+        const gym = gyms[gymKey];
+        const marker = markers[gymKey];
+
+        // Hover enter (desktop) or touch (mobile)
+        function activateGym() {
+          // Update marker to active state
+          marker.setIcon(createMarkerIcon(gym.color, true));
+
+          // Smooth fly to location
+          map.flyTo(gym.coords, 14, {
+            duration: 0.8,
+            easeLinearity: 0.25
+          });
+
+          // Open popup after animation
+          setTimeout(() => {
+            marker.openPopup();
+          }, 400);
+
+          // Add active state to card
+          card.classList.add('gym-card-active');
+        }
+
+        // Hover leave (desktop)
+        function deactivateGym() {
+          marker.setIcon(createMarkerIcon(gym.color, false));
+          marker.closePopup();
+          card.classList.remove('gym-card-active');
+        }
+
+        // Desktop hover events
+        card.addEventListener('mouseenter', activateGym);
+        card.addEventListener('mouseleave', deactivateGym);
+
+        // Mobile touch events
+        card.addEventListener('touchstart', function (e) {
+          // Deactivate all other cards first
+          gymCards.forEach((c, i) => {
+            if (i !== index) {
+              c.classList.remove('gym-card-active');
+              const otherKey = cardToGym[i];
+              if (otherKey && markers[otherKey]) {
+                markers[otherKey].setIcon(createMarkerIcon(gyms[otherKey].color, false));
+                markers[otherKey].closePopup();
+              }
+            }
+          });
+          activateGym();
+        }, { passive: true });
+      });
+
+      // Reset view button functionality (if clicking on map container header)
+      const mapHeader = document.querySelector('.gym-map-header');
+      if (mapHeader) {
+        mapHeader.addEventListener('click', (e) => {
+          if (e.target === mapHeader || e.target.tagName === 'H3' || e.target.closest('h3')) {
+            resetToAllGyms();
+          }
+        });
+      }
+
+      // ========== ARROW NAVIGATION ==========
+      const gymKeys = ['ivan', 'geo', 'silver'];
+      let currentGymIndex = -1; // -1 = all gyms view
+
+      const prevBtn = document.getElementById('mapPrevBtn');
+      const nextBtn = document.getElementById('mapNextBtn');
+      const navName = document.getElementById('mapNavName');
+      const navDots = document.getElementById('mapNavDots');
+
+      function resetToAllGyms() {
+        currentGymIndex = -1;
+        map.fitBounds(bounds.pad(0.3), { duration: 0.5 });
+        Object.keys(markers).forEach(key => {
+          markers[key].setIcon(createMarkerIcon(gyms[key].color, false));
+          markers[key].closePopup();
+        });
+        gymCards.forEach(card => card.classList.remove('gym-card-active'));
+        updateNavUI();
+      }
+
+      function navigateToGym(index) {
+        // Wrap around
+        if (index < -1) index = gymKeys.length - 1;
+        if (index >= gymKeys.length) index = -1;
+
+        currentGymIndex = index;
+
+        if (index === -1) {
+          // Show all gyms
+          resetToAllGyms();
+          return;
+        }
+
+        const gymKey = gymKeys[index];
+        const gym = gyms[gymKey];
+        const marker = markers[gymKey];
+
+        // Reset all markers first
+        Object.keys(markers).forEach(key => {
+          markers[key].setIcon(createMarkerIcon(gyms[key].color, false));
+          markers[key].closePopup();
+        });
+        gymCards.forEach(card => card.classList.remove('gym-card-active'));
+
+        // Activate selected gym
+        marker.setIcon(createMarkerIcon(gym.color, true));
+        map.flyTo(gym.coords, 15, { duration: 0.6 });
+
+        setTimeout(() => {
+          marker.openPopup();
+        }, 300);
+
+        // Highlight corresponding card
+        if (gymCards[index]) {
+          gymCards[index].classList.add('gym-card-active');
+        }
+
+        updateNavUI();
+      }
+
+      function updateNavUI() {
+        // Update name
+        if (currentGymIndex === -1) {
+          navName.textContent = 'Всички зали';
+        } else {
+          navName.textContent = gyms[gymKeys[currentGymIndex]].name;
+        }
+
+        // Update dots
+        const dots = navDots.querySelectorAll('.dot');
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentGymIndex);
+        });
+      }
+
+      // Arrow click handlers
+      if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          navigateToGym(currentGymIndex - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          navigateToGym(currentGymIndex + 1);
+        });
+      }
+
+      // Initialize nav UI
+      updateNavUI();
+    })();
   </script>
+
 </body>
 
-<script>
-  const dropdownTrigger = document.querySelector(".dropdown-trigger");
-  const dropdownParent = dropdownTrigger.closest(".has-dropdown");
-
-  dropdownTrigger.addEventListener("click", (e) => {
-    e.preventDefault();
-    dropdownParent.classList.toggle("open");
-  });
-</script>
 </html>

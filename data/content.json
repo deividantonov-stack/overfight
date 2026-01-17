@@ -1,0 +1,293 @@
+{
+    "news": [
+        {
+            "id": "1",
+            "title": "Предстоящи състезания",
+            "description": "Информация за предстоящите състезания и подготовката на отбора.",
+            "image": "Resources/danokarate.png",
+            "link": "schedule.html",
+            "linkText": "График"
+        },
+        {
+            "id": "2",
+            "title": "Записване за нови членове",
+            "description": "Отворени записи за нови членове. Тренировки за всички възрасти.",
+            "image": "Resources/champs.png",
+            "link": "contacts.html",
+            "linkText": "Запиши се"
+        },
+        {
+            "id": "3",
+            "title": "Летни лагери",
+            "description": "Информация за летните тренировъчни лагери и подготовка.",
+            "image": "Resources/lqto.png",
+            "link": "gallery.html",
+            "linkText": "Виж повече"
+        }
+    ],
+    "trainers": [
+        {
+            "id": "1",
+            "name": "Сенпай Дейвид Антонов",
+            "shortName": "Дейвид Антонов",
+            "dan": "II дан",
+            "role": "Помощник-треньор",
+            "image": "Resources/deivid44.png",
+            "page": "trainerDEIVID.html",
+            "bio": [
+                "Сенпай Дейвид Антонов е помощник-треньор в карате клуб Overfight с богат състезателен опит и множество национални и международни успехи.",
+                "Като активен състезател и треньор, той съчетава практически опит с методична подготовка на младите каратисти."
+            ],
+            "contributions": [
+                "Помощник-треньор с активен състезателен опит",
+                "Работа с деца и напреднали групи",
+                "Множество медали от състезания"
+            ]
+        },
+        {
+            "id": "2",
+            "name": "Сенсей Иво Мукански",
+            "shortName": "Иво Мукански",
+            "dan": "III дан",
+            "role": "Президент и главен треньор",
+            "image": "Resources/ivo.png",
+            "page": "trainerIVO.html",
+            "bio": [
+                "Сенсей Иво Мукански е основател и президент на карате клуб Overfight и дългогодишен треньор с богат опит в подготовката на деца, младежи и състезатели.",
+                "В тренировъчния процес залага на дисциплина, уважение, техническа прецизност и изграждане на силен характер.",
+                "Под негово ръководство клубът постига множество национални и международни успехи."
+            ],
+            "contributions": [
+                "Основател и президент на карате клуб Overfight",
+                "Главен треньор с дългогодишен опит",
+                "Вдъхновител за поколения състезатели"
+            ]
+        },
+        {
+            "id": "3",
+            "name": "Сенпай Дамян Ников",
+            "shortName": "Дамян Ников",
+            "dan": "II дан",
+            "role": "Помощник-треньор",
+            "image": "Resources/damyan44.png",
+            "page": "trainerDAMYAN.html",
+            "bio": [
+                "Сенпай Дамян Ников е помощник-треньор в карате клуб Overfight с активен състезателен опит и множество национални и международни постижения.",
+                "Със своя ентусиазъм и отдаденост, той допринася за развитието на младите каратисти в клуба."
+            ],
+            "contributions": [
+                "Помощник-треньор и активен състезател",
+                "Работа с начинаещи и напреднали",
+                "Участие в национални и международни състезания"
+            ]
+        }
+    ],
+    "gyms": [
+        {
+            "id": "1",
+            "name": "Зала Иван Вазов",
+            "description": "Тренировки за всички възрасти",
+            "image": "Resources/lape.JPEG",
+            "features": [
+                "Координация",
+                "Фокус",
+                "Дисциплина"
+            ],
+            "address": "бул. Петко Каравелов 5, София"
+        },
+        {
+            "id": "2",
+            "name": "Зала Гео Милев",
+            "description": "Тренировки за всички възрасти",
+            "image": "Resources/lape1.JPEG",
+            "features": [
+                "Физическа подготовка",
+                "Постоянство",
+                "Самоувереност"
+            ],
+            "address": "ул. Едисон 29, София"
+        },
+        {
+            "id": "3",
+            "name": "Зала Силвър Сити",
+            "description": "Тренировки за всички възрасти",
+            "image": "Resources/lape5.png",
+            "features": [
+                "Физическа подготовка",
+                "Постоянство",
+                "Самоувереност"
+            ],
+            "address": "ул. Емилиян Станев 2А, бл. 6, София"
+        }
+    ],
+    "schedule": {
+        "geo": {
+            "name": "Зала Гео Милев",
+            "image": "Resources/geo-milev.jpg",
+            "days": [
+                {
+                    "day": "Понеделник",
+                    "time": "17:45 – 22:00"
+                },
+                {
+                    "day": "Вторник",
+                    "time": "17:45 – 22:00"
+                },
+                {
+                    "day": "Сряда",
+                    "time": "17:45 – 22:00"
+                },
+                {
+                    "day": "Четвъртък",
+                    "time": "17:45 – 22:00"
+                },
+                {
+                    "day": "Петък",
+                    "time": "17:45 – 22:00"
+                }
+            ]
+        },
+        "ivan": {
+            "name": "Зала Иван Вазов",
+            "image": "Resources/ivan-vazov.jpg",
+            "days": [
+                {
+                    "day": "Понеделник",
+                    "time": "17:45 – 22:00"
+                },
+                {
+                    "day": "Сряда",
+                    "time": "17:45 – 22:00"
+                },
+                {
+                    "day": "Петък",
+                    "time": "17:45 – 22:00"
+                }
+            ]
+        },
+        "silver": {
+            "name": "Зала Силвър Сити",
+            "image": "Resources/silver-city.jpg",
+            "days": [
+                {
+                    "day": "Вторник",
+                    "time": "18:00 – 19:00"
+                },
+                {
+                    "day": "Четвъртък",
+                    "time": "18:00 – 19:00"
+                }
+            ]
+        }
+    },
+    "siteInfo": {
+        "clubName": "Overfight",
+        "phone": "0899 111 290",
+        "email": "overfightbg@gmail.com",
+        "president": "Сенсей Иво Мукански"
+    },
+    "gallery": {
+        "trenirovki": {
+            "id": "trenirovki",
+            "title": "🥋 Тренировки",
+            "subtitle": "Зала и групи",
+            "cover": "Resources/grupalapeta.png",
+            "page": "gallerytrenirovki.html",
+            "images": [
+                {
+                    "id": "1",
+                    "src": "Resources/lape.JPEG",
+                    "description": "Тренировка в залата"
+                },
+                {
+                    "id": "2",
+                    "src": "Resources/lape1.JPEG",
+                    "description": "Групова тренировка"
+                },
+                {
+                    "id": "3",
+                    "src": "Resources/lape2.JPEG",
+                    "description": "Работа по техника"
+                },
+                {
+                    "id": "4",
+                    "src": "Resources/grupalapeta.png",
+                    "description": "Екипът на клуба"
+                }
+            ]
+        },
+        "uspehi": {
+            "id": "uspehi",
+            "title": "🏆 Успехи",
+            "subtitle": "Медали и състезания",
+            "cover": "Resources/champs.png",
+            "page": "galleryuspehi.html",
+            "images": [
+                {
+                    "id": "1",
+                    "src": "Resources/uspehi1.jpg",
+                    "description": "Награждаване след състезание"
+                },
+                {
+                    "id": "2",
+                    "src": "Resources/uspehi2.jpg",
+                    "description": "Медали от турнир"
+                },
+                {
+                    "id": "3",
+                    "src": "Resources/uspehi3.jpg",
+                    "description": "Шампиони на клуба"
+                },
+                {
+                    "id": "4",
+                    "src": "Resources/uspehi4.jpg",
+                    "description": "Международен успех"
+                },
+                {
+                    "id": "5",
+                    "src": "Resources/uspehi5.jpg",
+                    "description": "Републикански шампионат"
+                }
+            ]
+        },
+        "lageri": {
+            "id": "lageri",
+            "title": "🏕️ Лагери",
+            "subtitle": "Подготовка и сплотяване",
+            "cover": "Resources/lqto.png",
+            "page": "gallerylageri.html",
+            "images": [
+                {
+                    "id": "1",
+                    "src": "Resources/lager1.jpg",
+                    "description": "Летен лагер 2024"
+                },
+                {
+                    "id": "2",
+                    "src": "Resources/lager2.jpg",
+                    "description": "Тренировка на открито"
+                },
+                {
+                    "id": "3",
+                    "src": "Resources/lager3.jpg",
+                    "description": "Групово упражнение"
+                },
+                {
+                    "id": "4",
+                    "src": "Resources/lager4.jpg",
+                    "description": "Отборен дух"
+                },
+                {
+                    "id": "5",
+                    "src": "Resources/lager5.jpg",
+                    "description": "Награди от лагера"
+                },
+                {
+                    "id": "6",
+                    "src": "Resources/lqto.png",
+                    "description": "Летни спомени"
+                }
+            ]
+        }
+    }
+}
