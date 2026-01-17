@@ -1,6 +1,7 @@
 import { initApp } from './app.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+// Use readyState pattern to handle module loading after DOMContentLoaded
+function setupTransitions() {
     // Navigation order: НАЧАЛО → КОНТАКТИ → ЗА КЛУБА → ГАЛЕРИЯ → НОВИНИ → SOFIA GRAND PRIX
     const navOrder = [
         'index.html',
@@ -281,4 +282,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!history.state) {
         history.replaceState({ path: initialPath }, '', window.location.href);
     }
-});
+}
+
+// Call setupTransitions based on DOM ready state
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupTransitions);
+} else {
+    // DOM already loaded, run immediately
+    setupTransitions();
+}

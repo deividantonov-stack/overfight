@@ -2,17 +2,184 @@
 // OVERFIGHT - Main Application JavaScript
 // ==========================================================================
 
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', initApp);
-
-// Export for use in transitions.js
+// Export for use in transitions.js (transitions.js calls initApp)
 export { initApp };
+
+// Fallback: if page is accessed directly without transitions.js handling
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+} else {
+    // DOM already loaded, init immediately
+    initApp();
+}
 
 function initApp() {
     initNavigation();
     initDropdowns();
     initRevealAnimations();
     initYear();
+    initCounters();
+    initGymsMap();
+}
+
+// ==========================================================================
+// Counter Animation
+// ==========================================================================
+function initCounters() {
+    const counters = document.querySelectorAll('.counter');
+    if (!counters.length) return;
+
+    // Reset counters to 0 first
+    counters.forEach(counter => counter.textContent = '0');
+
+    function animateCounters() {
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            if (!target) return;
+
+            const duration = 1000;
+            const startTime = performance.now();
+
+            function updateCounter(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                const current = Math.floor(easeOutQuart * target);
+
+                counter.textContent = current;
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target;
+                }
+            }
+
+            requestAnimationFrame(updateCounter);
+        });
+    }
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    observer.disconnect();
+                    animateCounters();
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(statsSection);
+    }
+}
+
+// ==========================================================================
+// Gyms Map Initialization
+// ==========================================================================
+function initGymsMap() {
+    const mapContainer = document.getElementById('gyms-map');
+    if (!mapContainer) return;
+
+    // Skip if already initialized
+    if (mapContainer._leaflet_id) return;
+
+    const isVisible = () => {
+        const style = window.getComputedStyle(mapContainer);
+        return style.display !== 'none' && mapContainer.offsetParent !== null;
+    };
+
+    // Wait for Leaflet to be available
+    function waitForLeaflet(callback, attempts = 0) {
+        if (typeof L !== 'undefined') {
+            callback();
+        } else if (attempts < 50) {
+            setTimeout(() => waitForLeaflet(callback, attempts + 1), 100);
+        }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && isVisible() && !mapContainer._leaflet_id) {
+                observer.disconnect();
+                waitForLeaflet(() => createGymsMap(mapContainer));
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(mapContainer);
+}
+
+function createGymsMap(mapContainer) {
+    const gyms = {
+        'ivan': { name: 'Зала Иван Вазов', address: 'бул. „Петко Каравелов" 5, София', coords: [42.6875, 23.3181], color: '#A7F3FF' },
+        'geo': { name: 'Зала Гео Милев', address: 'ул. „Едисон" 29, София', coords: [42.6841, 23.3567], color: '#5c0909' },
+        'silver': { name: 'Зала Силвър Сити', address: 'ул. „Емилиян Станев" 2А, бл. 6, София', coords: [42.6563, 23.2976], color: '#FFD700' }
+    };
+
+    const allCoords = Object.values(gyms).map(g => g.coords);
+    const bounds = L.latLngBounds(allCoords);
+
+    const map = L.map('gyms-map', { scrollWheelZoom: false, zoomControl: true, dragging: true });
+    map.fitBounds(bounds.pad(0.7));
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; OSM &copy; CARTO',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }).addTo(map);
+
+    setTimeout(() => map.invalidateSize(), 100);
+    setTimeout(() => { map.invalidateSize(); map.fitBounds(bounds.pad(0.7)); }, 500);
+
+    function createMarkerIcon(color) {
+        return L.divIcon({
+            className: 'custom-gym-marker',
+            html: `<div style="width:24px;height:24px;background:${color};border:3px solid white;border-radius:50%;box-shadow:0 4px 16px rgba(0,0,0,0.5);"></div>`,
+            iconSize: [24, 24], iconAnchor: [12, 12], popupAnchor: [0, -12]
+        });
+    }
+
+    const markers = {};
+    const gymKeys = Object.keys(gyms);
+
+    gymKeys.forEach(key => {
+        const gym = gyms[key];
+        const marker = L.marker(gym.coords, { icon: createMarkerIcon(gym.color) }).addTo(map);
+        marker.bindPopup(`<div style="text-align:center;padding:8px;min-width:160px;"><div style="font-size:14px;font-weight:600;margin-bottom:4px;">${gym.name}</div><div style="font-size:12px;color:#666;">${gym.address}</div><a href="contacts.html" style="display:inline-block;margin-top:8px;font-size:12px;color:#5c0909;text-decoration:none;"><i class="fa-solid fa-directions"></i> Виж детайли</a></div>`, { closeButton: false });
+        markers[key] = marker;
+    });
+
+    // Navigation
+    let currentIndex = -1;
+    const prevBtn = document.getElementById('mapPrevBtn');
+    const nextBtn = document.getElementById('mapNextBtn');
+    const navName = document.getElementById('mapNavName');
+    const dots = document.querySelectorAll('.nav-dot');
+
+    function updateView(index) {
+        currentIndex = index;
+        dots.forEach((dot, i) => {
+            dot.style.opacity = i === index ? '1' : '0.5';
+            dot.style.transform = i === index ? 'scale(1.3)' : 'scale(1)';
+        });
+
+        if (index === -1) {
+            navName.textContent = 'Всички зали';
+            map.fitBounds(bounds.pad(0.7), { duration: 0.5 });
+            Object.values(markers).forEach(m => m.closePopup());
+        } else {
+            const key = gymKeys[index];
+            const gym = gyms[key];
+            navName.textContent = gym.name;
+            map.flyTo(gym.coords, 15, { duration: 0.6 });
+            setTimeout(() => markers[key].openPopup(), 300);
+        }
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => { let i = currentIndex - 1; if (i < -1) i = gymKeys.length - 1; updateView(i); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { let i = currentIndex + 1; if (i >= gymKeys.length) i = -1; updateView(i); });
+    dots.forEach((dot, i) => dot.addEventListener('click', () => updateView(i)));
 }
 
 // ==========================================================================

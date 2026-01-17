@@ -102,38 +102,42 @@
 
     <div class="location-grid reveal-stagger">
       <!-- Location 1 -->
-      <div class="location-card" data-location="geo">
+      <a href="https://www.google.com/maps/search/?api=1&query=42.6841,23.3567" target="_blank" rel="noopener"
+        class="location-card" data-location="geo">
         <h3 class="location-card-name">
           <i class="fa-solid fa-map-marker-alt" style="color: var(--brand-red);"></i>
           Зала Гео Милев
         </h3>
         <p class="location-card-address">ул. „Едисон" 29, София</p>
-      </div>
+      </a>
 
       <!-- Location 2 -->
-      <div class="location-card" data-location="ivan">
+      <a href="https://www.google.com/maps/search/?api=1&query=42.6875,23.3181" target="_blank" rel="noopener"
+        class="location-card" data-location="ivan">
         <h3 class="location-card-name">
           <i class="fa-solid fa-map-marker-alt" style="color: var(--accent-ice);"></i>
           Зала Иван Вазов
         </h3>
         <p class="location-card-address">бул. „Петко Каравелов" 5, София</p>
-      </div>
+      </a>
 
       <!-- Location 3 -->
-      <div class="location-card" data-location="silver">
+      <a href="https://www.google.com/maps/search/?api=1&query=42.6563,23.2976" target="_blank" rel="noopener"
+        class="location-card" data-location="silver">
         <h3 class="location-card-name">
           <i class="fa-solid fa-map-marker-alt" style="color: #FFD700;"></i>
           Зала Силвър Сити
         </h3>
         <p class="location-card-address">ул. „Емилиян Станев" 2А, бл. 6, София</p>
-      </div>
+      </a>
     </div>
 
-    <!-- View Map Button -->
+    <!-- View Map Button - Opens Google Maps with all 3 locations -->
     <div style="text-align: center; margin-top: var(--space-xl);" class="reveal">
-      <button class="btn btn-primary btn-xl" id="openMapBtn">
+      <a href="https://www.google.com/maps/dir/42.6841,23.3567/42.6875,23.3181/42.6563,23.2976" target="_blank"
+        rel="noopener" class="btn btn-primary btn-xl">
         <i class="fa-solid fa-map"></i> Виж на картата
-      </button>
+      </a>
     </div>
   </main>
 
@@ -200,7 +204,7 @@
         name: 'Зала Гео Милев',
         address: 'ул. „Едисон" 29, София',
         coords: [42.6841, 23.3567],
-        color: '#E11D48'
+        color: '#5c0909'
       },
       ivan: {
         name: 'Зала Иван Вазов',

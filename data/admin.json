@@ -1,0 +1,10 @@
+{
+  "admin": {
+    "id": "ddfade51-393e-4d6a-a1d7-2786fb73616d",
+    "username": "deivid",
+    "passwordHash": "741b1fcfa33d77bd2c95f2f1bd2614e6278d70dad43f79fd25423cf0f8be5c1c",
+    "salt": "7f8d2b06ed9c92c5f836d020ca379dc0",
+    "createdAt": "2026-01-17T05:26:36.219Z"
+  },
+  "registrationLocked": true
+}

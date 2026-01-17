@@ -15,9 +15,9 @@
   --bg-tertiary: #161B22;
 
   /* Brand Colors */
-  --brand-red: #E11D48;
-  --brand-red-dark: #BE123C;
-  --brand-red-glow: rgba(225, 29, 72, 0.4);
+  --brand-red: #5c0909;
+  --brand-red-dark: #3d0606;
+  --brand-red-glow: rgba(92, 9, 9, 0.4);
   --accent-ice: #A7F3FF;
   --accent-ice-glow: rgba(167, 243, 255, 0.3);
 
@@ -804,6 +804,8 @@ body.slide-out-down {
 }
 
 .feature-card {
+  display: flex;
+  flex-direction: column;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
@@ -838,6 +840,9 @@ body.slide-out-down {
 
 .feature-card-body {
   padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .feature-card-title {
@@ -854,6 +859,7 @@ body.slide-out-down {
 
 .feature-card-list {
   margin-bottom: var(--space-lg);
+  flex-grow: 1;
 }
 
 .feature-card-list li {
@@ -2038,27 +2044,87 @@ body.slide-out-down {
   background: var(--glass-bg);
 }
 
-/* Mobile Responsive for gym map */
+/* Mobile Responsive for gym map - Show on mobile with adjusted sizing */
 @media (max-width: 768px) {
+  .gym-map-section {
+    margin-top: var(--space-xl);
+  }
+
   .gym-map-container {
-    height: 300px;
-    border-radius: var(--radius-lg);
+    height: 280px;
+    border-radius: var(--radius-md);
   }
 
-  .gym-map-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-sm);
+  .gym-map-header h3 {
+    font-size: 14px;
+    justify-content: center;
   }
 
-  .gym-map-header span {
+  /* Hide navigation arrows on mobile - just show all markers */
+  .gym-map-nav {
     display: none;
+  }
+}
+
+/* Mobile hero background - keep image but optimize for performance */
+@media (max-width: 768px) {
+  .hero-bg {
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(225, 29, 72, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 70%, rgba(167, 243, 255, 0.1) 0%, transparent 50%),
+      linear-gradient(180deg, transparent 0%, var(--bg-primary) 100%),
+      url('Resources/proba.jpg');
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Mobile Stats Cards - keep 3 columns but optimize sizes */
+  .stats-grid {
+    gap: var(--space-sm) !important;
+  }
+
+  .stat-card {
+    padding: var(--space-md) var(--space-sm) !important;
+  }
+
+  .stat-card .stat-icon i {
+    font-size: 20px !important;
+  }
+
+  .stat-card .stat-number {
+    font-size: 32px !important;
+  }
+
+  .stat-card .stat-label {
+    font-size: 10px !important;
+    letter-spacing: 1px !important;
+  }
+
+  .stat-card .stat-desc {
+    font-size: 9px !important;
+  }
+
+  .section-header h2 {
+    font-size: 22px !important;
+  }
+
+  .section-header p {
+    font-size: 13px !important;
   }
 }
 
 /* ==========================================================================
    Map Navigation Arrows
    ========================================================================== */
+.gym-map-container {
+  width: 100%;
+  height: 350px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
 .gym-map-wrapper {
   position: relative;
 }
