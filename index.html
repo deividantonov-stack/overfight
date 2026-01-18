@@ -49,17 +49,18 @@
           <li><a href="contacts.html">КОНТАКТИ</a></li>
 
           <li class="has-dropdown">
-            <a href="about.html" class="dropdown-trigger">ЗА КЛУБА</a>
+            <a href="#" class="dropdown-trigger" onclick="event.preventDefault()">ЗА КЛУБА</a>
             <ul class="dropdown">
               <li><a href="trainers.html">ТРЕНЬОРИ</a></li>
               <li><a href="about.html">ОПИСАНИЕ</a></li>
-              <li><a href="schedule.html">ГРАФИК</a></li>
+              <li><a href="gallery.html">ГАЛЕРИЯ</a></li>
             </ul>
           </li>
 
-          <li><a href="gallery.html">ГАЛЕРИЯ</a></li>
           <li><a href="news.html">НОВИНИ</a></li>
-          <li><a href="sofiagradprix.html">SOFIA GRAND PRIX</a></li>
+          <li><a href="sofiagradprix.html"
+              style="background: linear-gradient(135deg, var(--brand-red), var(--brand-red-dark)); color: white;">SOFIA
+              GRAND PRIX</a></li>
         </ul>
       </nav>
     </div>
@@ -76,8 +77,8 @@
         Място, където спортът, дисциплината и характерът вървят ръка за ръка.
       </p>
       <div class="hero-actions">
-        <a href="schedule.html" class="btn btn-ghost btn-xl" style="background: rgba(255, 255, 255, 0.1);">
-          <i class="fa-regular fa-calendar"></i> График
+        <a href="gallery.html" class="btn btn-ghost btn-xl" style="background: rgba(255, 255, 255, 0.1);">
+          <i class="fa-solid fa-images"></i> Галерия
         </a>
         <a href="contacts.html" class="btn btn-primary btn-xl">
           <i class="fa-regular fa-envelope"></i> Контакти
@@ -162,64 +163,9 @@
         <p>Тренировки за всички възрасти в три удобни локации в София</p>
       </div>
 
-      <div class="feature-grid reveal-stagger">
-        <!-- Gym 1 -->
-        <article class="feature-card">
-          <div class="feature-card-media">
-            <img src="Resources/lape.JPEG" alt="Зала Иван Вазов" loading="lazy" />
-          </div>
-          <div class="feature-card-body">
-            <h3 class="feature-card-title">Зала Иван Вазов</h3>
-            <p class="feature-card-desc">Тренировки за всички възрасти</p>
-            <ul class="feature-card-list">
-              <li>Понеделник</li>
-              <li>Сряда</li>
-              <li>Петък</li>
-            </ul>
-            <a class="btn btn-secondary btn-full" href="contacts.html">
-              Запиши се
-            </a>
-          </div>
-        </article>
-
-        <!-- Gym 2 -->
-        <article class="feature-card">
-          <div class="feature-card-media">
-            <img src="Resources/lape1.JPEG" alt="Зала Гео Милев" loading="lazy" />
-          </div>
-          <div class="feature-card-body">
-            <h3 class="feature-card-title">Зала Гео Милев</h3>
-            <p class="feature-card-desc">Тренировки за всички възрасти</p>
-            <ul class="feature-card-list">
-              <li>Понеделник</li>
-              <li>Вторник</li>
-              <li>Сряда</li>
-              <li>Четвъртък</li>
-              <li>Петък</li>
-            </ul>
-            <a class="btn btn-secondary btn-full" href="contacts.html">
-              Запиши се
-            </a>
-          </div>
-        </article>
-
-        <!-- Gym 3 -->
-        <article class="feature-card">
-          <div class="feature-card-media">
-            <img src="Resources/lape5.png" alt="Зала Силвър Сити" loading="lazy" />
-          </div>
-          <div class="feature-card-body">
-            <h3 class="feature-card-title">Зала Силвър Сити</h3>
-            <p class="feature-card-desc">Тренировки за всички възрасти</p>
-            <ul class="feature-card-list">
-              <li>Вторник</li>
-              <li>Четвъртък</li>
-            </ul>
-            <a class="btn btn-secondary btn-full" href="contacts.html">
-              Запиши се
-            </a>
-          </div>
-        </article>
+      <!-- Gyms Grid - Loaded dynamically from API -->
+      <div class="feature-grid reveal-stagger" id="gyms-container">
+        <p style="text-align:center;color:var(--text-muted);">Зареждане...</p>
       </div>
 
       <!-- Interactive Map -->
@@ -295,7 +241,7 @@
       <nav class="footer-links">
         <a href="about.html">Политика</a>
         <a href="contacts.html">Контакти</a>
-        <a href="schedule.html">График</a>
+        <a href="gallery.html">Галерия</a>
       </nav>
 
       <div class="social">

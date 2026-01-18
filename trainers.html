@@ -37,16 +37,17 @@
           <li><a href="index.html">НАЧАЛО</a></li>
           <li><a href="contacts.html">КОНТАКТИ</a></li>
           <li class="has-dropdown">
-            <a href="about.html" class="dropdown-trigger is-active">ЗА КЛУБА</a>
+            <a href="#" class="dropdown-trigger is-active" onclick="event.preventDefault()">ЗА КЛУБА</a>
             <ul class="dropdown">
               <li><a href="trainers.html">ТРЕНЬОРИ</a></li>
               <li><a href="about.html">ОПИСАНИЕ</a></li>
-              <li><a href="schedule.html">ГРАФИК</a></li>
+              <li><a href="gallery.html">ГАЛЕРИЯ</a></li>
             </ul>
           </li>
-          <li><a href="gallery.html">ГАЛЕРИЯ</a></li>
           <li><a href="news.html">НОВИНИ</a></li>
-          <li><a href="sofiagradprix.html">SOFIA GRAND PRIX</a></li>
+          <li><a href="sofiagradprix.html"
+              style="background: linear-gradient(135deg, var(--brand-red), var(--brand-red-dark)); color: white;">SOFIA
+              GRAND PRIX</a></li>
         </ul>
       </nav>
     </div>
@@ -59,57 +60,9 @@
       <p>Опитни инструктори с дългогодишен опит и доказани резултати</p>
     </div>
 
-    <!-- Trainer Grid -->
-    <div class="trainer-grid reveal-stagger">
-
-      <!-- Trainer 1 - Deivid -->
-      <a href="trainerDEIVID.html" class="trainer-card">
-        <div class="trainer-card-image">
-          <img src="Resources/deivid44.png" alt="Сенпай Дейвид Антонов" loading="lazy" />
-        </div>
-        <div class="trainer-card-body">
-          <h3 class="trainer-card-name">Сенпай Дейвид Антонов</h3>
-          <p class="trainer-card-role">
-            II дан <i class="fa-solid fa-circle" style="font-size: 0.4em;"></i> Помощник-треньор
-          </p>
-          <span class="trainer-card-link">
-            Виж профил <i class="fa-solid fa-arrow-right"></i>
-          </span>
-        </div>
-      </a>
-
-      <!-- Trainer 2 - Ivo -->
-      <a href="trainerIVO.html" class="trainer-card">
-        <div class="trainer-card-image">
-          <img src="Resources/ivo.png" alt="Сенсей Иво Мукански" loading="lazy" />
-        </div>
-        <div class="trainer-card-body">
-          <h3 class="trainer-card-name">Сенсей Иво Мукански</h3>
-          <p class="trainer-card-role">
-            III дан <i class="fa-solid fa-circle" style="font-size: 0.4em;"></i> Президент
-          </p>
-          <span class="trainer-card-link">
-            Виж профил <i class="fa-solid fa-arrow-right"></i>
-          </span>
-        </div>
-      </a>
-
-      <!-- Trainer 3 - Damyan -->
-      <a href="trainerDAMYAN.html" class="trainer-card">
-        <div class="trainer-card-image">
-          <img src="Resources/damyan44.png" alt="Сенпай Дамян Ников" loading="lazy" />
-        </div>
-        <div class="trainer-card-body">
-          <h3 class="trainer-card-name">Сенпай Дамян Ников</h3>
-          <p class="trainer-card-role">
-            II дан <i class="fa-solid fa-circle" style="font-size: 0.4em;"></i> Помощник-треньор
-          </p>
-          <span class="trainer-card-link">
-            Виж профил <i class="fa-solid fa-arrow-right"></i>
-          </span>
-        </div>
-      </a>
-
+    <!-- Trainer Grid - Loaded dynamically from API -->
+    <div class="trainer-grid reveal-stagger" id="trainers-container">
+      <p style="text-align:center;color:var(--text-muted);">Зареждане...</p>
     </div>
   </main>
 
@@ -124,7 +77,7 @@
       <nav class="footer-links">
         <a href="about.html">Политика</a>
         <a href="contacts.html">Контакти</a>
-        <a href="schedule.html">График</a>
+        <a href="gallery.html">Галерия</a>
       </nav>
 
       <div class="social">

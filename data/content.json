@@ -4,31 +4,33 @@
       "id": "1",
       "title": "Проба",
       "description": "дейвид пробва да качи новина",
-      "image": "Resources/lager5.jpg",
+      "image": "Resources/deividss.png",
       "link": "facebook.com",
-      "linkText": "link"
+      "linkText": "facebook"
     },
     {
-      "id": "2",
-      "title": "Записване за нови членове",
-      "description": "Отворени записи за нови членове. Тренировки за всички възрасти.",
-      "image": "Resources/champs.png",
-      "link": "contacts.html",
-      "linkText": "Запиши се"
+      "id": "ab97a5b1-66fa-4937-ae78-e47ee9100f4e",
+      "title": "проба2",
+      "description": "асд",
+      "image": "Resources/danokarate.png",
+      "link": "nqma",
+      "linkText": "Виж повече",
+      "createdAt": "2026-01-18T15:18:56.487Z"
     },
     {
-      "id": "3",
-      "title": "Летни лагери",
-      "description": "Информация за летните тренировъчни лагери и подготовка.",
-      "image": "Resources/lqto.png",
-      "link": "gallery.html",
-      "linkText": "Виж повече"
+      "id": "d3b47585-50be-4f86-b388-3f23fbe8e0e7",
+      "title": "Проба3",
+      "description": "as",
+      "image": "Resources/sensei12.png",
+      "link": "#",
+      "linkText": "Виж повече",
+      "createdAt": "2026-01-18T15:19:09.191Z"
     }
   ],
   "trainers": [
     {
       "id": "1",
-      "name": "Сенпай Дейвид Антонов",
+      "name": "Сенпай Дейвид Антонов ",
       "shortName": "Дейвид Антонов",
       "dan": "II дан",
       "role": "Помощник-треньор",
@@ -109,7 +111,7 @@
     },
     {
       "id": "3",
-      "name": "Зала Силвър Сити",
+      "name": "Зала Силвър Сити 15",
       "description": "Тренировки за всички възрасти",
       "image": "Resources/lape5.png",
       "features": [
@@ -202,27 +204,17 @@
         {
           "id": "2",
           "src": "Resources/lape1.JPEG",
-          "description": "Групова тренировка"
+          "description": "Еластичност"
         },
         {
           "id": "3",
           "src": "Resources/lape2.JPEG",
-          "description": "Работа по техника"
+          "description": "Концентрация"
         },
         {
           "id": "4",
           "src": "Resources/grupalapeta.png",
-          "description": "Екипът на клуба"
-        },
-        {
-          "id": "9b84707f-7fed-4828-8701-bee02396c538",
-          "src": "Resources/lape2.JPEG",
-          "description": ""
-        },
-        {
-          "id": "36274e9b-af2f-4dd0-ac25-5da9e35b8397",
-          "src": "Resources/champs.png",
-          "description": ""
+          "description": "Гръпова снимка 5-8 годишни"
         }
       ]
     },
@@ -236,27 +228,27 @@
         {
           "id": "1",
           "src": "Resources/uspehi1.jpg",
-          "description": "Награждаване след състезание"
+          "description": ""
         },
         {
           "id": "2",
           "src": "Resources/uspehi2.jpg",
-          "description": "Медали от турнир"
+          "description": ""
         },
         {
           "id": "3",
           "src": "Resources/uspehi3.jpg",
-          "description": "Шампиони на клуба"
+          "description": ""
         },
         {
           "id": "4",
           "src": "Resources/uspehi4.jpg",
-          "description": "Международен успех"
+          "description": "ПРОБА ДАМЯН"
         },
         {
           "id": "5",
           "src": "Resources/uspehi5.jpg",
-          "description": "Републикански шампионат"
+          "description": "ПРОБА СОФИ"
         }
       ]
     },
@@ -270,17 +262,12 @@
         {
           "id": "1",
           "src": "Resources/lager1.jpg",
-          "description": "Летен лагер 2024"
+          "description": "Летен лагер 2025"
         },
         {
           "id": "2",
           "src": "Resources/lager2.jpg",
-          "description": "Тренировка на открито"
-        },
-        {
-          "id": "3",
-          "src": "Resources/lager3.jpg",
-          "description": "Групово упражнение"
+          "description": "Технически семинар"
         },
         {
           "id": "4",
@@ -288,17 +275,12 @@
           "description": "Отборен дух"
         },
         {
-          "id": "5",
-          "src": "Resources/lager5.jpg",
-          "description": "Награди от лагера"
-        },
-        {
           "id": "6",
           "src": "Resources/lqto.png",
-          "description": "Летни спомени"
+          "description": "Тренировка на открито"
         }
       ]
     }
   },
-  "previewMode": true
+  "previewMode": false
 }

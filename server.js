@@ -745,6 +745,98 @@ app.put('/api/schedule/:gymId', authenticateToken, (req, res) => {
 });
 
 // ==========================================================================
+// GALLERY CRUD
+// ==========================================================================
+
+// Get all gallery albums
+app.get('/api/gallery', (req, res) => {
+    const content = readJsonFile(CONTENT_FILE);
+    res.json(content?.gallery || {});
+});
+
+// Get specific gallery album (trenirovki, uspehi, lageri)
+app.get('/api/gallery/:albumId', (req, res) => {
+    const content = readJsonFile(CONTENT_FILE);
+    const { albumId } = req.params;
+
+    if (content?.gallery && content.gallery[albumId]) {
+        res.json(content.gallery[albumId]);
+    } else {
+        res.status(404).json({ error: 'Album not found' });
+    }
+});
+
+// Update gallery album (protected)
+app.put('/api/gallery/:albumId', authenticateToken, (req, res) => {
+    const content = readJsonFile(CONTENT_FILE);
+    const { albumId } = req.params;
+
+    if (!content.gallery) {
+        content.gallery = {};
+    }
+
+    if (!content.gallery[albumId]) {
+        return res.status(404).json({ error: 'Album not found' });
+    }
+
+    content.gallery[albumId] = { ...content.gallery[albumId], ...req.body };
+
+    if (writeJsonFile(CONTENT_FILE, content)) {
+        res.json({ message: 'Album updated', data: content.gallery[albumId] });
+    } else {
+        res.status(500).json({ error: 'Failed to save' });
+    }
+});
+
+// Add image to album (protected)
+app.post('/api/gallery/:albumId/images', authenticateToken, (req, res) => {
+    const content = readJsonFile(CONTENT_FILE);
+    const { albumId } = req.params;
+    const { src, description } = req.body;
+
+    if (!content.gallery?.[albumId]) {
+        return res.status(404).json({ error: 'Album not found' });
+    }
+
+    const newImage = {
+        id: uuidv4(),
+        src: src || 'Resources/logo.png',
+        description: description || ''
+    };
+
+    content.gallery[albumId].images.push(newImage);
+
+    if (writeJsonFile(CONTENT_FILE, content)) {
+        res.json({ message: 'Image added', data: newImage });
+    } else {
+        res.status(500).json({ error: 'Failed to save' });
+    }
+});
+
+// Delete image from album (protected)
+app.delete('/api/gallery/:albumId/images/:imageId', authenticateToken, (req, res) => {
+    const content = readJsonFile(CONTENT_FILE);
+    const { albumId, imageId } = req.params;
+
+    if (!content.gallery?.[albumId]) {
+        return res.status(404).json({ error: 'Album not found' });
+    }
+
+    const imageIndex = content.gallery[albumId].images.findIndex(img => img.id === imageId);
+    if (imageIndex === -1) {
+        return res.status(404).json({ error: 'Image not found' });
+    }
+
+    content.gallery[albumId].images.splice(imageIndex, 1);
+
+    if (writeJsonFile(CONTENT_FILE, content)) {
+        res.json({ message: 'Image deleted' });
+    } else {
+        res.status(500).json({ error: 'Failed to save' });
+    }
+});
+
+// ==========================================================================
 // IMAGE UPLOAD
 // ==========================================================================
 

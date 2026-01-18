@@ -20,6 +20,157 @@ function initApp() {
     initYear();
     initCounters();
     initGymsMap();
+
+    // Dynamic content loading from API
+    loadNews();
+    loadTrainers();
+    loadGymsContent();
+    loadGalleryAlbums();
+}
+
+// ==========================================================================
+// Dynamic Content Loading from API
+// ==========================================================================
+
+async function loadNews() {
+    const container = document.getElementById('news-container');
+    if (!container) return;
+
+    try {
+        const res = await fetch('/api/news');
+        const news = await res.json();
+
+        if (!news || news.length === 0) {
+            container.innerHTML = '<p style="text-align:center;color:var(--text-muted);">Няма налични новини</p>';
+            return;
+        }
+
+        container.innerHTML = news.map(item => `
+            <article class="news-card">
+                <div class="news-thumb">
+                    <img src="${item.image}" alt="${item.title}" loading="lazy" />
+                </div>
+                <div class="news-body">
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                    <a class="link" href="${item.link}">
+                        ${item.linkText || 'Виж повече'} <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        `).join('');
+
+        // Re-trigger reveal animations for new content
+        container.classList.add('reveal-stagger');
+        initRevealAnimations();
+    } catch (error) {
+        console.error('Error loading news:', error);
+    }
+}
+
+async function loadTrainers() {
+    const container = document.getElementById('trainers-container');
+    if (!container) return;
+
+    try {
+        const res = await fetch('/api/content/trainers');
+        const trainers = await res.json();
+
+        if (!trainers || trainers.length === 0) {
+            container.innerHTML = '<p style="text-align:center;color:var(--text-muted);">Няма налични треньори</p>';
+            return;
+        }
+
+        container.innerHTML = trainers.map(item => `
+            <a href="${item.page || '#'}" class="trainer-card">
+                <div class="trainer-card-image">
+                    <img src="${item.image}" alt="${item.name}" loading="lazy" />
+                </div>
+                <div class="trainer-card-body">
+                    <h3 class="trainer-card-name">${item.name}</h3>
+                    <p class="trainer-card-role">
+                        ${item.dan} <i class="fa-solid fa-circle" style="font-size: 0.4em;"></i> ${item.role}
+                    </p>
+                    <span class="trainer-card-link">
+                        Виж профил <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </div>
+            </a>
+        `).join('');
+
+        container.classList.add('reveal-stagger');
+        initRevealAnimations();
+    } catch (error) {
+        console.error('Error loading trainers:', error);
+    }
+}
+
+async function loadGymsContent() {
+    const container = document.getElementById('gyms-container');
+    if (!container) return;
+
+    try {
+        const res = await fetch('/api/content/gyms');
+        const gyms = await res.json();
+
+        if (!gyms || gyms.length === 0) return;
+
+        container.innerHTML = gyms.map(item => `
+            <article class="feature-card">
+                <div class="feature-card-media">
+                    <img src="${item.image}" alt="${item.name}" loading="lazy" />
+                </div>
+                <div class="feature-card-body">
+                    <h3 class="feature-card-title">${item.name}</h3>
+                    <p class="feature-card-desc">${item.description}</p>
+                    <ul class="feature-card-list">
+                        ${(item.features || []).map(f => `<li>${f}</li>`).join('')}
+                    </ul>
+                    <a class="btn btn-secondary btn-full" href="contacts.html">
+                        Запиши се
+                    </a>
+                </div>
+            </article>
+        `).join('');
+
+        container.classList.add('reveal-stagger');
+        initRevealAnimations();
+    } catch (error) {
+        console.error('Error loading gyms:', error);
+    }
+}
+
+async function loadGalleryAlbums() {
+    const container = document.getElementById('gallery-albums-container');
+    if (!container) return;
+
+    try {
+        const res = await fetch('/api/content/gallery');
+        const gallery = await res.json();
+
+        if (!gallery || Object.keys(gallery).length === 0) {
+            container.innerHTML = '<p style="text-align:center;color:var(--text-muted);">Няма налични албуми</p>';
+            return;
+        }
+
+        // Convert gallery object to array
+        const albums = Object.values(gallery);
+
+        container.innerHTML = albums.map(album => `
+            <a href="${album.page}" class="album-card">
+                <img src="${album.cover}" alt="${album.title}" loading="lazy" />
+                <div class="album-card-overlay">
+                    <h3 class="album-card-title">${album.title}</h3>
+                    <p class="album-card-count">${album.subtitle}</p>
+                </div>
+            </a>
+        `).join('');
+
+        container.classList.add('reveal-stagger');
+        initRevealAnimations();
+    } catch (error) {
+        console.error('Error loading gallery albums:', error);
+    }
 }
 
 // ==========================================================================

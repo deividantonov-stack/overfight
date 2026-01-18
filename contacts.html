@@ -42,16 +42,17 @@
           <li><a href="index.html">НАЧАЛО</a></li>
           <li><a href="contacts.html" class="is-active">КОНТАКТИ</a></li>
           <li class="has-dropdown">
-            <a href="about.html" class="dropdown-trigger">ЗА КЛУБА</a>
+            <a href="#" class="dropdown-trigger" onclick="event.preventDefault()">ЗА КЛУБА</a>
             <ul class="dropdown">
               <li><a href="trainers.html">ТРЕНЬОРИ</a></li>
               <li><a href="about.html">ОПИСАНИЕ</a></li>
-              <li><a href="schedule.html">ГРАФИК</a></li>
+              <li><a href="gallery.html">ГАЛЕРИЯ</a></li>
             </ul>
           </li>
-          <li><a href="gallery.html">ГАЛЕРИЯ</a></li>
           <li><a href="news.html">НОВИНИ</a></li>
-          <li><a href="sofiagradprix.html">SOFIA GRAND PRIX</a></li>
+          <li><a href="sofiagradprix.html"
+              style="background: linear-gradient(135deg, var(--brand-red), var(--brand-red-dark)); color: white;">SOFIA
+              GRAND PRIX</a></li>
         </ul>
       </nav>
     </div>
@@ -102,8 +103,8 @@
 
     <div class="location-grid reveal-stagger">
       <!-- Location 1 -->
-      <a href="https://www.google.com/maps/search/?api=1&query=42.6841,23.3567" target="_blank" rel="noopener"
-        class="location-card" data-location="geo">
+      <a href="https://www.google.com/maps/search/?api=1&query=ul.+Edison+29,+Sofia,+Bulgaria" target="_blank"
+        rel="noopener" class="location-card" data-location="geo">
         <h3 class="location-card-name">
           <i class="fa-solid fa-map-marker-alt" style="color: var(--brand-red);"></i>
           Зала Гео Милев
@@ -112,8 +113,8 @@
       </a>
 
       <!-- Location 2 -->
-      <a href="https://www.google.com/maps/search/?api=1&query=42.6875,23.3181" target="_blank" rel="noopener"
-        class="location-card" data-location="ivan">
+      <a href="https://www.google.com/maps/search/?api=1&query=boulevard+Petko+Karavelov+5,+Sofia,+Bulgaria"
+        target="_blank" rel="noopener" class="location-card" data-location="ivan">
         <h3 class="location-card-name">
           <i class="fa-solid fa-map-marker-alt" style="color: var(--accent-ice);"></i>
           Зала Иван Вазов
@@ -122,8 +123,8 @@
       </a>
 
       <!-- Location 3 -->
-      <a href="https://www.google.com/maps/search/?api=1&query=42.6563,23.2976" target="_blank" rel="noopener"
-        class="location-card" data-location="silver">
+      <a href="https://maps.app.goo.gl/nRAf4AFMTFZFDEjM6" target="_blank" rel="noopener" class="location-card"
+        data-location="silver">
         <h3 class="location-card-name">
           <i class="fa-solid fa-map-marker-alt" style="color: #FFD700;"></i>
           Зала Силвър Сити
@@ -134,8 +135,8 @@
 
     <!-- View Map Button - Opens Google Maps with all 3 locations -->
     <div style="text-align: center; margin-top: var(--space-xl);" class="reveal">
-      <a href="https://www.google.com/maps/dir/42.6841,23.3567/42.6875,23.3181/42.6563,23.2976" target="_blank"
-        rel="noopener" class="btn btn-primary btn-xl">
+      <a href="https://www.google.com/maps/dir/ul.+Edison+29,+Sofia/boulevard+Petko+Karavelov+5,+Sofia/M847%2B82+Sofia"
+        target="_blank" rel="noopener" class="btn btn-primary btn-xl">
         <i class="fa-solid fa-map"></i> Виж на картата
       </a>
     </div>
@@ -162,7 +163,7 @@
       <nav class="footer-links">
         <a href="about.html">Политика</a>
         <a href="contacts.html">Контакти</a>
-        <a href="schedule.html">График</a>
+        <a href="gallery.html">Галерия</a>
       </nav>
 
       <div class="social">

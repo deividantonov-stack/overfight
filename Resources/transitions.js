@@ -2,16 +2,16 @@ import { initApp } from './app.js';
 
 // Use readyState pattern to handle module loading after DOMContentLoaded
 function setupTransitions() {
-    // Navigation order: НАЧАЛО → КОНТАКТИ → ЗА КЛУБА → ГАЛЕРИЯ → НОВИНИ → SOFIA GRAND PRIX
+    // Navigation order: НАЧАЛО → КОНТАКТИ → ЗА КЛУБА → НОВИНИ → SOFIA GRAND PRIX
     const navOrder = [
         'index.html',
         'contacts.html',
         'about.html',
         'trainers.html',
-        'schedule.html',
         'gallery.html',
         'news.html',
         'sofiagradprix.html',
+        'schedule.html',
         'competitors.html'
     ];
 
@@ -22,12 +22,13 @@ function setupTransitions() {
         'trainerIVO.html': 'trainers.html',
         'gallerylageri.html': 'gallery.html',
         'gallerytrenirovki.html': 'gallery.html',
-        'galleryuspehi.html': 'gallery.html'
+        'galleryuspehi.html': 'gallery.html',
+        'schedule.html': 'gallery.html'
     };
 
     // Dropdown child pages (vertical navigation - top/bottom)
     const dropdownChildren = {
-        'about.html': ['trainers.html', 'about.html', 'schedule.html'],
+        'about.html': ['trainers.html', 'about.html', 'gallery.html'],
     };
 
     // Get effective index for a page
