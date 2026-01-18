@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/deividantonov-stack/overfight#readme",
   "dependencies": {
+    "@vercel/speed-insights": "^1.2.0",
     "cors": "^2.8.5",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
