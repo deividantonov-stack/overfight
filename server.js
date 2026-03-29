@@ -24,6 +24,29 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 
+// Speed Insights Middleware - Inject tracking script into HTML responses
+app.use((req, res, next) => {
+    const originalSend = res.send;
+    
+    res.send = function(data) {
+        // Only modify HTML responses
+        if (typeof data === 'string' && data.includes('</body>')) {
+            // Inject Speed Insights tracking script before closing body tag
+            const speedInsightsScript = `
+    <script>
+      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+  </body>`;
+            data = data.replace('</body>', speedInsightsScript);
+        }
+        
+        return originalSend.call(this, data);
+    };
+    
+    next();
+});
+
 // File paths
 const ADMIN_FILE = path.join(__dirname, 'data', 'admin.json');
 const CONTENT_FILE = path.join(__dirname, 'data', 'content.json');
@@ -421,7 +444,7 @@ function generateTrainerHTML(trainer) {
         <span class="brand-name">Overfight</span>
       </a>
 
-      <button class="nav-toggle" aria-label="Отвори меню" aria-expanded="false">
+      <button class="nav-toggle" aria-label="Отвори ��еню" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
